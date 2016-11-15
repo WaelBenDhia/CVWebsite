@@ -1,0 +1,377 @@
+/* Universal stuff */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab|Raleway:200');
+* {
+    font-family: 'Raleway', sans-serif;
+}
+body {
+	display: inline-block;
+	float: left;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+h1{
+	font-size: 50px;
+	font-weight: lighter;
+}
+h1.section-title{
+	font-size: 80px;
+	font-weight: normal;
+	margin-bottom: 20px !important;
+	width: 90%;
+	text-align: left;
+	border-bottom: 1px solid;
+}
+h2{
+	font-size: 30px;
+	font-weight: lighter;
+}
+.filler{
+	display: inline-block;
+	float: left;
+	width: 100%;
+	height: calc(75% - 308px);
+	background-image: url('../images/pattern-light.png');
+    background-attachment: fixed;
+}
+.filler-0{
+	background-image: url('../images/backgrounds/pattern167.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.filler-1{
+	background-image: url('../images/backgrounds/pattern189.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.filler-2{
+	background-image: url('../images/backgrounds/pattern223.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.filler-3{
+	background-image: url('../images/backgrounds/pattern320.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+/* 
+	Navbar 
+*/
+header{
+	display: block;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	padding:0;
+	width: 100%;
+	height: 50px;
+	z-index: 10;
+	background-color:rgba(255, 255, 255);
+	background-color:rgba(255, 255, 255, 0.75);
+}
+.navbar{
+	width: 80%;
+	height: 100%;
+	list-style-type:none;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding:0;
+	overflow-x:hidden;
+}
+.navbar li{
+	overflow: hidden;
+	width: 20%;
+	height: 100%;
+	float: left;
+	display:block;
+}
+.navbar li a{
+	width: 100%;
+	height: 46px;
+	font-size: 32px;
+	font-size: 2.2vw;
+	font-weight: normal;
+	display:block;
+	cursor: pointer;
+	text-align: center;
+	border-top: 4px solid #000;
+	transition: border 0.1s ease;
+	display: flex;
+	justify-content: center; /* align horizontal */
+	align-items: center;
+}
+.navbar li a:hover{
+	color:#28f;
+	border-top: 0px solid #000;
+	border-bottom: 4px solid #28f;
+}
+.navbar-selected{
+	color:#28f;
+	border-top: 0px solid #000 !important;
+	border-bottom: 4px solid #28f !important;
+}
+.toggle-left{
+	display: block;
+	float: left;
+	font-size: 30px;
+	line-height: 200%;
+	width: 50px;
+	overflow: hidden;
+	height: 100%;
+	border-left: 5px solid #28f;
+	border-right: 45px solid #000;
+	transition: border 0.3s linear;
+}
+.toggle-right{
+	display: block;
+	float: left;
+	font-size: 30px;
+	line-height: 200%;
+	width: 50px;
+	overflow: hidden;
+	height: 100%;
+	border-left: 45px solid #000;
+	border-right: 5px solid #28f;
+	transition: border 0.3s linear;
+}
+.toggle-inside{
+	position: absolute;
+	z-index: -1;
+	left: 5;
+}
+/* 
+	Header
+*/
+.header-filler{
+	display: inline-block;
+	float: left;
+	text-align: center;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	padding:0;
+	width: 100%;
+	height: 292px;
+	color: #eee;
+	background-color: #28f;
+	border-bottom: 8px solid #000;
+}
+.header-filler h1{
+	padding-top: 70px;
+}
+.header-filler h2{
+	transition: 0.5s linear opacity;
+}
+
+.transparent{
+	opacity: 0;
+	transition: 0.5s linear opacity;
+}
+
+.opaque{
+	opacity: 1;
+	transition: 0.5s linear opacity;
+}
+/* Content stuff */
+.section{
+	display: inline-block;
+	float: left;
+	width: 100%;
+	padding-bottom: 40px;
+	padding-top: 40px;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	text-align: center;
+	background-color: #fff;
+	border-top: 8px solid #000;
+	border-bottom: 8px solid #000;
+}
+.section .horizontal-seperator{
+	display: inline-block;
+	float: left;
+	background-color: #000;
+	height: 1px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 30%;
+	margin-right: 30%;
+	width: 40%;
+}
+img.profile{
+	max-width: 300px;
+	border-radius: 50%;
+	box-shadow: 0 0 0px 2px rgba(0, 0, 0, 1);
+}
+.section h1, .section h2, .section h3{
+	margin: auto;
+	overflow: visible;
+}
+.section h2{
+	margin-top: 40px;
+}
+.section p{
+	max-width: 1000px;
+	font-size: 24px;
+	margin: auto;
+}
+p.slightly-smaller{
+	font-size: 20px;
+}
+.section a{
+	color: orange;
+	text-decoration: none;
+}
+.backgroundblue{
+	color: #eee;
+	background-color: #28f;
+}
+.backgroundblue .horizontal-seperator{
+	background-color: #eee;
+}
+.skills{
+	display: inline-block;
+	float: left;
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+.skills h1, .skills h2, .skills h3{
+	font-weight: bold;
+	margin: 0;
+	overflow: hidden;
+}
+.skill-set{
+	width: 49%;
+	height: 210px;
+	margin-top: 40px;
+	display: inline-block;
+	float: left;
+}
+.skills .vertical-seperator{
+	display: inline-block;
+	float: left;
+	background-color: #fff;
+	height: 120px;
+	margin-top: 110px;
+	margin-bottom: 20px;
+	width: 1px;
+}
+.skills .horizontal-seperator{
+	display: inline-block;
+	float: left;
+	background-color: #fff;
+	height: 1px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	margin-left: 20px;
+	margin-right: 20px;
+	width: calc(100% - 40px);
+}
+.skill-set h2{
+	width: 100%;
+	height: 50px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.skill-set table{
+	color: #fff;
+	width: 100%;
+	font-size: 22px;
+	text-align: center;
+	height: 160px;
+}
+.skill-set td{
+	width: 50%;
+}
+.skill-set ul{
+	padding: 0;
+	width: 80%;
+	margin: auto;
+}
+.skill-set ul li{
+	display: inline-block;
+	float: left;
+	width: 50%;
+}
+.skill-set ul li{
+	display: inline-block;
+	float: left;
+	width: 50%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.skill-set ul li ul li{
+	display: inline-block;
+	float: left;
+	width: 50%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+/*
+	Footer
+ */
+footer .container{
+	width: 80%;
+	max-width: 800px;
+	min-width: 400px;
+	height: 100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+footer a{
+	color: orange;
+	text-decoration: none;
+	cursor: pointer;
+	transition: color 0.5s ease;
+}
+footer a:hover{
+	color: white;
+}
+footer ul{
+	display: inline-block;
+	width: 100%;
+	padding: 0;
+	list-style-type: none;
+}
+footer li{
+	display: inline-block;
+}
+footer p{
+	font-size: 20px !important;
+}
+.vertical-seperator{
+	display: inline-block;
+	float: left;
+	background-color: #eee;
+	width: 1px;
+	height: 100%;
+}
+.left{
+	display: inline-block;
+	float: left;
+	margin-top: auto;
+	width: calc(50% - 1px);
+}
+.right{
+	display: inline-block;
+	float: left;
+	margin-top: auto;
+	width: 50%;
+}
+a svg{
+	margin-left: 10px;
+	margin-right: 10px;
+	height: 48px;
+	width: 48px;
+	fill: currentColor;
+}

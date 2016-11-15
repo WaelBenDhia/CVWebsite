@@ -1,0 +1,191 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/waelCV.css">
+	<script src="js/jquery-3.1.0.min.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-route.min.js"></script>
+	<script src="js/CV.js">	</script>
+	<title>Wael Ben Dhia CV</title>
+</head>
+
+<body ng-app="cvModule" ng-controller="controller" scroll id="page">
+	<header>
+		<!--<a ng-click="toggleLanguage()" class="{{langToggler}}">
+			<div class="toggle-inside">EN FR</div>
+		</a>-->
+  		<ul class="navbar">
+  			<li><a class="{{selectedHome}}" ng-click="updateSelectedSection(-1)">Home</a></li>
+			<li><a class="{{selectedAbout}}" ng-click="updateSelectedSection(0)">About Me</a></li>
+			<li><a class="{{selectedSkills}}" ng-click="updateSelectedSection(1)">Skills</a></li>
+			<li><a class="{{selectedEducation}}" ng-click="updateSelectedSection(2)">Education</a></li>
+			<li><a class="{{selectedContact}}" ng-click="updateSelectedSection(3)">Contact</a></li>
+		</ul>
+	</header>
+	<div class="header-filler" id="Home">
+		<h1>Wael Ben Dhia</h1>
+		<h2 class="{{thingsOpacity}}">{{thingsAboutMe}}</h2>
+	</div>
+<!--############################## HERE BE ABOUT ##############################-->
+	<div class="filler filler-0"></div>
+	<div id="About" class="section">
+		<h1 class="section-title">About Me</h1>
+		<img src="images/profile.jpg" alt="Photo" class="profile">
+		<h2>WHO I AM</h2>
+		<span class="horizontal-seperator"></span>
+		<p>I'm Wael Ben Dhia an avid programmer from Tunisia.
+		<br>I'm passionate about code, algorithmics, design and technology.
+		<br>I'm currently studying software engineering at <a href="http://www.esprit-tn.com">Esprit</a> in my final semester.</p>
+		<h2>WHAT I CAN DO</h2>
+		<span class="horizontal-seperator"></span>
+		<p>I can create websites, build servers and make Android and desktop applications.
+		<br>I have experience with JEE, JSF, ASP.Net, .Net, Symfony and AngularJS frameworks and I'm always eager to learn more.</p>
+		<h2>WHAT I DO ON MY OFF TIME</h2>
+		<span class="horizontal-seperator"></span>
+		<p>I participate in programming and AI challenges, some samples can be found on my <a href="https://github.com/WaelBenDhia">Github</a>.
+		<br>I dabble in video game development, mostly small personal projects using Unity or UDK.
+		<br>I play chess and video games (recently SOMA, Dark Souls 3, Evolve).
+		<br>I'm a huge music nerd with a soft spot for punk and its derivatives and free jazz.</p>
+	</div>
+<!--############################## HERE BE SKILLS ##############################-->
+	<div class="filler filler-1"></div>
+	<div id="Skills" class="section backgroundblue">
+		<h1 class="section-title">Skills</h1>
+		<div class="skills">
+			<div class="skill-set">
+				<h2>Programming Languages</h2>
+				<span class="horizontal-seperator"></span>
+				<table>
+					<tr>
+						<td><h3>Advanced</h3></td>
+						<td><h3>Intermediate</h3></td>
+					</tr>
+					<tr>
+						<td>Java, C#, C++</td>
+						<td>C, Php, Clojure, Scala</td>
+					</tr>
+					<tr>
+						<td colspan="2"><h3>Basic</h3></td>
+					</tr>
+					<tr>
+						<td colspan="2">Scheme, VBA</td>
+					</tr>
+				</table>
+			</div>
+			<span class="vertical-seperator"></span>
+			<div class="skill-set">
+				<h2>Frameworks</h2>
+				<span class="horizontal-seperator"></span>
+				<table>
+					<tr>
+						<td>Java Enterprise Edition</td>
+						<td>Java Server Faces</td>
+					</tr>
+					<tr>
+						<td>.Net</td>
+						<td>ASP.Net</td>
+					</tr>
+					<tr>
+						<td>Symfony</td>
+						<td>AngularJS</td>
+					</tr>
+				</table>
+			</div>
+			<div class="skill-set">
+				<h2>Web Technologies</h2>
+				<span class="horizontal-seperator"></span>
+				<table>
+					<tr>
+						<td>HTML</td>
+						<td>CSS</td>
+					</tr>
+					<tr>
+						<td colspan="2">Javascript</td>
+					</tr>
+				</table>
+			</div>
+			<span class="vertical-seperator"></span>
+			<div class="skill-set">
+				<h2>Mobile and Desktop Apps</h2>
+				<span class="horizontal-seperator"></span>
+				<table>
+					<tr>
+						<td>Java SWING</td>
+						<td>Android</td>
+					</tr>
+					<tr>
+						<td colspan="2">Windows Presentation Foundation</td>
+					</tr>
+				</table>
+			</div>
+			<div class="skill-set">
+				<h2>Database</h2>
+				<span class="horizontal-seperator"></span>
+				<table>
+					<tr>
+						<td><h3>SQL</h3></td>
+						<td><h3>NoSQL</h3></td>
+					</tr>
+					<tr>
+						<td>Oracle, MySQL, Microsoft SQL</td>
+						<td>Hbase, Hive</td>
+					</tr>
+				</table>
+			</div>
+			<span class="vertical-seperator"></span>
+			<div class="skill-set">
+				<h2>Languages</h2>
+				<span class="horizontal-seperator"></span>
+				<table>
+					<tr>
+						<td>English Fluent</td>
+						<td>French Fluent</td>
+					</tr>
+					<tr>
+						<td colspan="2">Arabic Native</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+<!--############################## HERE BE EDUCATION ##############################-->
+	<div class="filler  filler-2"></div>
+	<div id="Education" class="section">
+		<h1 class="section-title">Education</h1>
+		<h2>2013-Present</h2>
+		<span class="horizontal-seperator"></span>
+		<h3>Degree in computer engineering</h3>
+		<p class="slightly-smaller">Esprit, Tunisia</p>
+
+		<h2>2008-2013</h2>
+		<span class="horizontal-seperator"></span>
+		<h3>1st and 2nd year BS degree in Mathematics and Computer Science</h3>
+		<p class="slightly-smaller">Universite Pierre et Marie Curie, France</p>
+
+		<h2>2008</h2>
+		<span class="horizontal-seperator"></span>
+		<h3>Baccalaureate in Science specialized in Physics and Chemistry with Honours</h3>
+		<p class="slightly-smaller">Jeddah French Internation School, Kingdom of Saudi Arabia</p>
+	</div>
+<!--############################## HERE BE CONTACT ##############################-->
+	<div class="filler filler-3"></div>
+	<footer id="Contact" class="section backgroundblue">
+		<h1 class="section-title">Contact</h1>
+		<div class="container">
+			<div class="left">
+				<p>Coded and designed by myself using AngularJS.
+				<br>Source hosted on <a href="link">GitHub</a></p>
+			</div>
+			<span class="vertical-seperator"></span>
+			<div class="right">
+				<p>Email icon made by <a href="http://www.flaticon.com/authors/chanut-is-industries" title="Chanut is Industries">Chanut is Industries</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></p>
+			</div>
+		</div>
+		<span class="horizontal-seperator"></span>
+		<ul>
+			<li><a href="https://www.facebook.com/wael.dhia"><svg viewBox="0 0 64 64"><use x="0" y="0" width="0" height="0" xlink:href="images/logo/facebook.svg#path4160"></use></svg></a></li>
+			<li><a href="https://github.com/WaelBenDhia/"><svg viewBox="0 0 64 64"><use x="0" y="0" width="0" height="0" xlink:href="images/logo/github.svg#path16"></use></svg></a></li>
+			<li><a href="mailto:wael.bendhia@esprit.tn"><svg viewBox="0 0 64 64"><use x="0" y="0" width="0" height="0" xlink:href="images/logo/email.svg#path7"></use></svg></a></li>
+		</ul>
+	</footer>
+</body>
+</html>
