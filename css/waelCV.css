@@ -29,34 +29,28 @@ h2{
 	display: inline-block;
 	float: left;
 	width: 100%;
-	height: calc(75% - 308px);
-	background-image: url('../images/pattern-light.png');
-    background-attachment: fixed;
-}
-.filler-0{
-	background-image: url('../images/backgrounds/pattern167.svg');
-	background-repeat: no-repeat;
+	height: calc(100% - 308px);
+	background-image: url('../images/backgrounds/pattern223.svg');
 	background-position: center;
-	background-size: cover;
+    background-attachment: fixed;
+    background-size: 33.333%;
+}
+/*.filler-0{
+	background-image: url('../images/backgrounds/pattern167.svg');
+	background-position: center;
 }
 .filler-1{
 	background-image: url('../images/backgrounds/pattern189.svg');
-	background-repeat: no-repeat;
 	background-position: center;
-	background-size: cover;
 }
 .filler-2{
 	background-image: url('../images/backgrounds/pattern223.svg');
-	background-repeat: no-repeat;
 	background-position: center;
-	background-size: cover;
 }
 .filler-3{
 	background-image: url('../images/backgrounds/pattern320.svg');
-	background-repeat: no-repeat;
 	background-position: center;
-	background-size: cover;
-}
+}*/
 /* 
 	Navbar 
 */
@@ -228,12 +222,21 @@ p.slightly-smaller{
 	font-size: 20px;
 }
 .section a{
-	color: orange;
+	color: #FF934F;
+	font-weight: bold;
 	text-decoration: none;
+	cursor: pointer;
+	transition: color 0.5s ease;
+}
+.section a:hover{
+	color: black;
 }
 .backgroundblue{
 	color: #eee;
 	background-color: #28f;
+}
+.section.backgroundblue a:hover{
+	color: white;
 }
 .backgroundblue .horizontal-seperator{
 	background-color: #eee;
@@ -327,15 +330,6 @@ footer .container{
 	height: 100px;
 	margin-left: auto;
 	margin-right: auto;
-}
-footer a{
-	color: orange;
-	text-decoration: none;
-	cursor: pointer;
-	transition: color 0.5s ease;
-}
-footer a:hover{
-	color: white;
 }
 footer ul{
 	display: inline-block;
