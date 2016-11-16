@@ -4,12 +4,12 @@
     font-family: 'Raleway', sans-serif;
 }
 :root {
-  --style1-bg-color: #f7f4f3;
-  --style1-bg-color-transparent: rgba(247, 244, 243, 0.75);
-  --style1-fg-color: #1C3144;
+  --style1-bg-color: #fff;
+  --style1-bg-color-transparent: rgba(255, 255, 255, 0.75);
+  --style1-fg-color: #000;
   --style2-bg-color: #2080ff;
   --style2-fg-color: #eee;
-  --link-hover-color: #B9314F;
+  --link-hover-color: #FF660B;
   --fifth-color: #ADD7F6;
 }
 body {
