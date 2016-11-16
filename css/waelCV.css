@@ -3,6 +3,14 @@
 * {
     font-family: 'Raleway', sans-serif;
 }
+:root {
+  --style1-bg-color: #f7f4f3;
+  --style1-bg-color-transparent: rgba(255, 255, 255, 0.75);
+  --style1-fg-color: #000;
+  --style2-bg-color: #28f;
+  --style2-fg-color: #eee;
+  --link-hover-color: #FF934F;
+}
 body {
 	display: inline-block;
 	float: left;
@@ -42,22 +50,6 @@ h2{
 	background-position: center;
     background-size: 500px;
 }
-/*.filler-0{
-	background-image: url('../images/backgrounds/pattern167.svg');
-	background-position: center;
-}
-.filler-1{
-	background-image: url('../images/backgrounds/pattern189.svg');
-	background-position: center;
-}
-.filler-2{
-	background-image: url('../images/backgrounds/pattern223.svg');
-	background-position: center;
-}
-.filler-3{
-	background-image: url('../images/backgrounds/pattern320.svg');
-	background-position: center;
-}*/
 /* 
 	Navbar 
 */
@@ -74,8 +66,8 @@ header{
 	min-height: 5%;
 	max-height: 100px;
 	z-index: 10;
-	background-color:rgba(255, 255, 255);
-	background-color:rgba(255, 255, 255, 0.75);
+	background-color:var(--style1-bg-color);
+	background-color:var(--style1-bg-color-transparent);
 }
 .navbar{
 	width: 80%;
@@ -104,21 +96,21 @@ header{
 	display:block;
 	cursor: pointer;
 	text-align: center;
-	border-top: 4px solid #000;
+	border-top: 4px solid var(--style1-fg-color);
 	transition: border 0.1s ease;
 	display: flex;
 	justify-content: center; /* align horizontal */
 	align-items: center;
 }
 .navbar li a:hover{
-	color:#28f;
-	border-top: 0px solid #000;
-	border-bottom: 4px solid #28f;
+	color: var(--style2-bg-color);
+	border-top: 0px solid var(--style1-fg-color);
+	border-bottom: 4px solid var(--style2-bg-color);
 }
 .navbar-selected{
-	color:#28f;
-	border-top: 0px solid #000 !important;
-	border-bottom: 4px solid #28f !important;
+	color:var(--style2-bg-color);
+	border-top: 0px solid var(--style1-fg-color) !important;
+	border-bottom: 4px solid var(--style2-bg-color) !important;
 }
 .toggle-left{
 	display: block;
@@ -128,8 +120,8 @@ header{
 	width: 50px;
 	overflow: hidden;
 	height: 100%;
-	border-left: 5px solid #28f;
-	border-right: 45px solid #000;
+	border-left: 5px solid var(--style2-bg-color);
+	border-right: 45px solid var(--style1-fg-color);
 	transition: border 0.3s linear;
 }
 .toggle-right{
@@ -140,8 +132,8 @@ header{
 	width: 50px;
 	overflow: hidden;
 	height: 100%;
-	border-left: 45px solid #000;
-	border-right: 5px solid #28f;
+	border-left: 45px solid var(--style1-fg-color);
+	border-right: 5px solid var(--style2-bg-color);
 	transition: border 0.3s linear;
 }
 .toggle-inside{
@@ -163,9 +155,7 @@ header{
 	padding:0;
 	width: 100%;
 	height: 292px;
-	color: #eee;
-	background-color: #28f;
-	border-bottom: 8px solid #000;
+	border-bottom: 8px solid var(--style1-fg-color);
 }
 .header-filler h1{
 	padding-top: 70px;
@@ -195,14 +185,14 @@ header{
 	top: 0;
 	bottom: 0;
 	text-align: center;
-	background-color: #fff;
-	border-top: 8px solid #000;
-	border-bottom: 8px solid #000;
+	background-color: var(--style1-bg-color);
+	border-top: 8px solid var(--style1-fg-color);
+	border-bottom: 8px solid var(--style1-fg-color);
 }
 .section .horizontal-seperator{
 	display: inline-block;
 	float: left;
-	background-color: #000;
+	background-color: var(--style1-fg-color);
 	height: 1px;
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -213,7 +203,7 @@ header{
 img.profile{
 	max-width: 300px;
 	border-radius: 50%;
-	box-shadow: 0 0 0px 2px rgba(0, 0, 0, 1);
+	box-shadow: 0 0 0px 2px var(--style1-fg-color);
 }
 .section h1, .section h2, .section h3{
 	margin: auto;
@@ -231,7 +221,7 @@ p.slightly-smaller{
 	font-size: 20px;
 }
 .section a{
-	color: #FF934F;
+	color: var(--link-hover-color);
 	font-weight: bold;
 	text-decoration: none;
 	cursor: pointer;
@@ -240,15 +230,15 @@ p.slightly-smaller{
 .section a:hover{
 	color: black;
 }
-.blue-background{
-	color: #eee;
-	background-color: #28f;
+.style2{
+	color: var(--style2-fg-color);
+	background-color: var(--style2-bg-color);
 }
-.section.blue-background a:hover{
+.section.style2 a:hover{
 	color: white;
 }
-.blue-background .horizontal-seperator{
-	background-color: #eee;
+.style2 .horizontal-seperator{
+	background-color: var(--style2-fg-color);
 }
 .skills{
 	display: inline-block;
@@ -272,7 +262,7 @@ p.slightly-smaller{
 .skills .vertical-seperator{
 	display: inline-block;
 	float: left;
-	background-color: #fff;
+	background-color: var(--style2-fg-color);
 	height: 120px;
 	margin-top: 110px;
 	margin-bottom: 20px;
@@ -281,7 +271,7 @@ p.slightly-smaller{
 .skills .horizontal-seperator{
 	display: inline-block;
 	float: left;
-	background-color: #fff;
+	background-color: var(--style2-fg-color);
 	height: 1px;
 	margin-bottom: 0px;
 	margin-top: 0px;
@@ -296,7 +286,7 @@ p.slightly-smaller{
 	margin-bottom: 0;
 }
 .skill-set table{
-	color: #fff;
+	color: var(--style2-fg-color);
 	width: 100%;
 	font-size: 22px;
 	text-align: center;
@@ -358,7 +348,7 @@ footer p{
 .vertical-seperator{
 	display: inline-block;
 	float: left;
-	background-color: #eee;
+	background-color: var(--style2-fg-color);
 	width: 1px;
 	height: 100%;
 }
