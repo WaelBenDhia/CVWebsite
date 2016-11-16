@@ -9,11 +9,11 @@ var thingsAboutMe = [
 var app = angular.module('cvModule',['ngRoute']);
 app.controller('controller', function($scope, $anchorScroll, $location, $interval){
 	$scope.langToggler = "toggle-right";
-	$scope.selectedHome = $location.path() == "/"  ? "navbar-selected" : "";
-	$scope.selectedAbout = $location.path() == "/About"  ? "navbar-selected" : "";
-	$scope.selectedSkills = $location.path() == "/Skills" ? "navbar-selected" : "";
-	$scope.selectedEducation = $location.path() == "/Education" ? "navbar-selected" : "";
-	$scope.selectedContact = $location.path() == "/Contact" ? "navbar-selected" : "";
+	$scope.selectedHome = $location.hash() == "Home" || $location.hash() == "" ? "navbar-selected" : "";
+	$scope.selectedAbout = $location.hash() == "About"  ? "navbar-selected" : "";
+	$scope.selectedSkills = $location.hash() == "Skills" ? "navbar-selected" : "";
+	$scope.selectedEducation = $location.hash() == "Education" ? "navbar-selected" : "";
+	$scope.selectedContact = $location.hash() == "Contact" ? "navbar-selected" : "";
 	$scope.thingsAboutMe = thingsAboutMe[0];
 	
 	var langEN = true;
