@@ -39,6 +39,7 @@ h2{
 	float: left;
 	width: 100%;
 	height: calc(100% - 300px);
+	max-height: 800px;
 }
 .background{
 	position: fixed;
