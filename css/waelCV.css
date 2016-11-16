@@ -83,6 +83,7 @@ header{
 .navbar li{
 	overflow: hidden;
 	width: 20%;
+	max-width: 1000px;
 	height: 100%;
 	float: left;
 	display:block;
