@@ -30,9 +30,16 @@ h2{
 	float: left;
 	width: 100%;
 	height: 500px;
+}
+.background{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
 	background-image: url('../images/backgrounds/pattern223.svg');
 	background-position: center;
-    background-attachment: fixed;
     background-size: 500px;
 }
 /*.filler-0{
@@ -233,14 +240,14 @@ p.slightly-smaller{
 .section a:hover{
 	color: black;
 }
-.backgroundblue{
+.blue-background{
 	color: #eee;
 	background-color: #28f;
 }
-.section.backgroundblue a:hover{
+.section.blue-background a:hover{
 	color: white;
 }
-.backgroundblue .horizontal-seperator{
+.blue-background .horizontal-seperator{
 	background-color: #eee;
 }
 .skills{
@@ -325,6 +332,9 @@ p.slightly-smaller{
 /*
 	Footer
  */
+footer{
+	border-bottom: 0px !important;
+}
 footer .container{
 	width: 80%;
 	max-width: 800px;
