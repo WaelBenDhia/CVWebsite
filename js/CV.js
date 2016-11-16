@@ -13,6 +13,7 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 	$scope.selectedAbout = $location.hash() == "About"  ? "navbar-selected" : "";
 	$scope.selectedSkills = $location.hash() == "Skills" ? "navbar-selected" : "";
 	$scope.selectedEducation = $location.hash() == "Education" ? "navbar-selected" : "";
+	$scope.selectedProjects = $location.hash() == "Projects" ? "navbar-selected" : "";
 	$scope.selectedContact = $location.hash() == "Contact" ? "navbar-selected" : "";
 	$scope.thingsAboutMe = thingsAboutMe[0];
 	
@@ -59,7 +60,8 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 		$scope.selectedAbout = ind == 0 ? "navbar-selected" : "";
 		$scope.selectedSkills = ind == 1 ? "navbar-selected" : "";
 		$scope.selectedEducation = ind == 2 ? "navbar-selected" : "";
-		$scope.selectedContact = ind == 3 ? "navbar-selected" : "";
+		$scope.selectedProjects = ind == 3 ? "navbar-selected" : "";
+		$scope.selectedContact = ind == 4 ? "navbar-selected" : "";
 	}
 
 	$scope.updateSelectedSection = function(ind){
@@ -79,10 +81,13 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 				target = "Education";
 				break;
 			case 3:
+				target = "Projects";
+				break;
+			case 4:
 				target = "Contact";
 				break;
 		}
-
+		
 		$location.hash(target);
 		$anchorScroll.yOffset = 48;
 		$anchorScroll();
@@ -100,8 +105,10 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
         		scope.updateSelectedSectionLazy(1);
         	else if(document.querySelector('#Education').getBoundingClientRect().bottom >= 50)
         		scope.updateSelectedSectionLazy(2);
-        	else
+        	else if(document.querySelector('#Projects').getBoundingClientRect().bottom >= 50)
         		scope.updateSelectedSectionLazy(3);
+        	else
+        		scope.updateSelectedSectionLazy(4);
             scope.$apply();
         });
     };
