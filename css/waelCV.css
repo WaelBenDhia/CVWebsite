@@ -431,4 +431,13 @@ footer p{
 footer .container{
 	height: initial;
 }
+.header-filler{
+	height: initial;
+}
+.header-filler h1{
+	font-size: 90px;
+}
+.header-filler h2{
+	font-size: 40px;
+}
 }

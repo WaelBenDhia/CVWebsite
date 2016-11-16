@@ -14,6 +14,7 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 	$scope.selectedSkills = $location.path() == "/Skills" ? "navbar-selected" : "";
 	$scope.selectedEducation = $location.path() == "/Education" ? "navbar-selected" : "";
 	$scope.selectedContact = $location.path() == "/Contact" ? "navbar-selected" : "";
+	$scope.thingsAboutMe = thingsAboutMe[0];
 	
 	var langEN = true;
 
@@ -26,7 +27,7 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 		langEN = !langEN;
 	}
 	
-	var counter = 0;
+	var counter = 1;
 
 
 	//0 is displaying, 1 is fading out, 2 is fading in
