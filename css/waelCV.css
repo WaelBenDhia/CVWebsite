@@ -5,11 +5,12 @@
 }
 :root {
   --style1-bg-color: #f7f4f3;
-  --style1-bg-color-transparent: rgba(255, 255, 255, 0.75);
-  --style1-fg-color: #000;
-  --style2-bg-color: #28f;
+  --style1-bg-color-transparent: rgba(247, 244, 243, 0.75);
+  --style1-fg-color: #1C3144;
+  --style2-bg-color: #2080ff;
   --style2-fg-color: #eee;
-  --link-hover-color: #FF934F;
+  --link-hover-color: #B9314F;
+  --fifth-color: #ADD7F6;
 }
 body {
 	display: inline-block;
@@ -66,6 +67,7 @@ header{
 	min-height: 5%;
 	max-height: 100px;
 	z-index: 10;
+	color: var(--style1-fg-color);
 	background-color:var(--style1-bg-color);
 	background-color:var(--style1-bg-color-transparent);
 }
@@ -186,6 +188,7 @@ header{
 	bottom: 0;
 	text-align: center;
 	background-color: var(--style1-bg-color);
+	color: var(--style1-fg-color);
 	border-top: 8px solid var(--style1-fg-color);
 	border-bottom: 8px solid var(--style1-fg-color);
 }
