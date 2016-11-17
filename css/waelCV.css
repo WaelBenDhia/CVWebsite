@@ -223,7 +223,7 @@ img.profile{
 	margin-top: 40px;
 }
 .section p{
-	max-width: 1000px;
+	max-width: 600px;
 	font-size: 24px;
 	margin: auto;
 }
@@ -333,6 +333,7 @@ p.slightly-smaller{
 	Footer
  */
 footer{
+	background-color: #222 !important;
 	border-bottom: 0px !important;
 }
 footer .container{
