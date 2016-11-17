@@ -115,6 +115,5 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
     };
 })
 .run(['$anchorScroll', function($anchorScroll) {
-	console.log(screen.width);
 	$anchorScroll.yOffset = screen.width<480 ? 100 : 50;
 }]);
