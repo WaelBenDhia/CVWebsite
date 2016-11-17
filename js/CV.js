@@ -19,7 +19,6 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 	$scope.scrollPosition = 0;
 
 	var scrollOffset = angular.element(document.getElementById('navbar')).height();
-	//px per millisecond
 	var scrollSpeed = 2;
 	var langEN = true;
 
@@ -33,9 +32,6 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 	}
 	
 	var counter = 1;
-
-
-	//0 is displaying, 1 is fading out, 2 is fading in
 	var state = 0;
 	var interval = 1000;
 	$interval(function(){
@@ -59,7 +55,7 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 		}
 	},interval);
 	
-	$scope.updateSelectedSectionLazy = function(ind){
+	$scope.updateNavbar = function(ind){
 		$scope.selectedHome = ind == -1 ? "navbar-selected" : "";
 		$scope.selectedAbout = ind == 0 ? "navbar-selected" : "";
 		$scope.selectedSkills = ind == 1 ? "navbar-selected" : "";
@@ -69,7 +65,6 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 	}
 
 	$scope.updateSelectedSection = function(ind){
-		$scope.updateSelectedSectionLazy(ind);
 		var target;
 		switch(ind){
 			case -1:
@@ -94,6 +89,7 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 		var targetEl = angular.element(document.getElementById(target));
 		var scrollTime = Math.abs(targetEl.offset().top  - $scope.scrollPosition)/scrollSpeed;
 		$document.scrollToElement(targetEl, scrollOffset, scrollTime);
+		$location.hash(target);
 	}
 
 })
@@ -102,17 +98,17 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
         angular.element($window).bind("scroll", function() {
         	scope.scrollPosition = $window.scrollY;
         	if(document.querySelector('#Home').getBoundingClientRect().bottom >= 50)
-        		scope.updateSelectedSectionLazy(-1);
+        		scope.updateNavbar(-1);
         	else if(document.querySelector('#About').getBoundingClientRect().bottom >= 50)
-        		scope.updateSelectedSectionLazy(0);
+        		scope.updateNavbar(0);
         	else if(document.querySelector('#Skills').getBoundingClientRect().bottom >= 50)
-        		scope.updateSelectedSectionLazy(1);
+        		scope.updateNavbar(1);
         	else if(document.querySelector('#Education').getBoundingClientRect().bottom >= 50)
-        		scope.updateSelectedSectionLazy(2);
+        		scope.updateNavbar(2);
         	else if(document.querySelector('#Projects').getBoundingClientRect().bottom >= 50)
-        		scope.updateSelectedSectionLazy(3);
+        		scope.updateNavbar(3);
         	else
-        		scope.updateSelectedSectionLazy(4);
+        		scope.updateNavbar(4);
             scope.$apply();
         });
     };
