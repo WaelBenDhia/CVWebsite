@@ -5,6 +5,7 @@
 	<script src="js/jquery-3.1.0.min.js"></script>
 	<script src="js/angular.min.js"></script>
 	<script src="js/angular-route.min.js"></script>
+	<script src="js/angular-scroll.min.js"></script>
 	<script src="js/CV.js">	</script>
 	<title>Wael Ben Dhia CV</title>
 </head>
@@ -14,7 +15,7 @@
 		<!--<a ng-click="toggleLanguage()" class="{{langToggler}}">
 			<div class="toggle-inside">EN FR</div>
 		</a>-->
-  		<ul class="navbar">
+  		<ul id='navbar' class="navbar">
   			<li><a class="{{selectedHome}}" ng-click="updateSelectedSection(-1)">Home</a></li>
 			<li><a class="{{selectedAbout}}" ng-click="updateSelectedSection(0)">About Me</a></li>
 			<li><a class="{{selectedSkills}}" ng-click="updateSelectedSection(1)">Skills</a></li>

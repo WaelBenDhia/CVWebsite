@@ -6,8 +6,8 @@ var thingsAboutMe = [
 	"Technology enthusiast",
 	"Creative and ambitious"
 	];
-var app = angular.module('cvModule',['ngRoute']);
-app.controller('controller', function($scope, $anchorScroll, $location, $interval){
+var app = angular.module('cvModule',['ngRoute', 'duScroll']);
+app.controller('controller', function($scope, $anchorScroll, $location, $interval, $document){
 	$scope.langToggler = "toggle-right";
 	$scope.selectedHome = $location.hash() == "Home" || $location.hash() == "" ? "navbar-selected" : "";
 	$scope.selectedAbout = $location.hash() == "About"  ? "navbar-selected" : "";
@@ -16,7 +16,11 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 	$scope.selectedProjects = $location.hash() == "Projects" ? "navbar-selected" : "";
 	$scope.selectedContact = $location.hash() == "Contact" ? "navbar-selected" : "";
 	$scope.thingsAboutMe = thingsAboutMe[0];
-	
+	$scope.scrollPosition = 0;
+
+	var scrollOffset = angular.element(document.getElementById('navbar')).height();
+	//px per millisecond
+	var scrollSpeed = 2;
 	var langEN = true;
 
 	$scope.toggleLanguage = function(){
@@ -87,16 +91,16 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 				target = "Contact";
 				break;
 		}
-		
-		$location.hash(target);
-		$anchorScroll.yOffset = 50;
-		$anchorScroll();
+		var targetEl = angular.element(document.getElementById(target));
+		var scrollTime = Math.abs(targetEl.offset().top  - $scope.scrollPosition)/scrollSpeed;
+		$document.scrollToElement(targetEl, scrollOffset, scrollTime);
 	}
 
 })
 .directive("scroll", function ($window) {
     return function(scope, element, attrs) {
         angular.element($window).bind("scroll", function() {
+        	scope.scrollPosition = $window.scrollY;
         	if(document.querySelector('#Home').getBoundingClientRect().bottom >= 50)
         		scope.updateSelectedSectionLazy(-1);
         	else if(document.querySelector('#About').getBoundingClientRect().bottom >= 50)
