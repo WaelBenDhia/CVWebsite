@@ -90,6 +90,7 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 		var scrollTime = Math.abs(targetEl.offset().top  - $scope.scrollPosition)/scrollSpeed;
 		$document.scrollToElement(targetEl, scrollOffset, scrollTime);
 		$location.hash(target);
+		$anchorScroll.yOffset = scrollOffset;
 	}
 
 })
@@ -112,4 +113,8 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
             scope.$apply();
         });
     };
-});
+})
+.run(['$anchorScroll', function($anchorScroll) {
+	console.log(screen.width);
+	$anchorScroll.yOffset = screen.width<480 ? 100 : 50;
+}]);
