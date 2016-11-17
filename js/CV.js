@@ -89,7 +89,7 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 		}
 		
 		$location.hash(target);
-		$anchorScroll.yOffset = 48;
+		$anchorScroll.yOffset = 50;
 		$anchorScroll();
 	}
 
