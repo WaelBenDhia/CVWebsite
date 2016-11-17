@@ -19,7 +19,7 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 	$scope.scrollPosition = 0;
 
 	var scrollOffset = angular.element(document.getElementById('navbar')).height();
-	var scrollSpeed = 2;
+	var scrollSpeed = 4;
 	var langEN = true;
 
 	$scope.toggleLanguage = function(){
@@ -89,6 +89,7 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 		var targetEl = angular.element(document.getElementById(target));
 		var scrollTime = Math.abs(targetEl.offset().top  - $scope.scrollPosition)/scrollSpeed;
 		$document.scrollToElement(targetEl, scrollOffset, scrollTime);
+		console.log(scrollTime);
 		$location.hash(target);
 		$anchorScroll.yOffset = scrollOffset;
 	}
