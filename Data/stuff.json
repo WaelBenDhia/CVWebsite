@@ -1,0 +1,62 @@
+{
+	"ThingsAboutMeEN" : [
+		"Software engineering student",
+		"Frontend engineer",
+		"Backend engineer",
+		"Android developer",
+		"Technology enthusiast",
+		"Creative and ambitious"
+	],
+	"EducationEN":[
+		{"time": "2013-Present" , "title":"Degree in computer engineering", "school":"Esprit, Tunisia"},
+		{"time": "2008-2013" , "title":"1st and 2nd year BS degree in Mathematics and Computer Science", "school":"Universite Pierre et Marie Curie, France"},
+		{"time": "2008" , "title":"Baccalaureate in Science specialized in Physics and Chemistry with Honours", "school":"Jeddah French Internation School, Kingdom of Saudi Arabia"}
+	],
+	"ProjectsEN" : [
+		{
+			"title":"2016 Academic project: MOOC", "description": "Online learning platform developed for university course.", "elements":
+			[
+				"Software design using UML.",
+				"Back end developed using .Net framework and Java Enterprise Edition.",
+				"Back office desktop application developed with Java SWING.",
+				"Back office Android app developed.",
+				"Back office web application developed using ASP.Net framework.",
+				"Front office web application developed using Java Server Faces.",
+				"Developed in team using the agile scrum framework."
+			]
+		},
+		{
+			"title":"2015 Academic project: SABA", "description": "Integrated system project realised for university course. Simulating and configuring a multinational corporate network. My tasks were:", "elements":
+			[
+				"Network subdivision and configuration",
+				"Installing and configuring Nagios monitoring server and agents",
+				"Installing and configuring Zoiper SIP server"
+			]
+		},
+		{
+			"title":"2015 Internship: Zitouna Bank", "description": "Sharepoint application for searching and viewing bank statements for internal use. Developed using ASP.Net framework."
+		},
+		{
+			"title":"2015 Academic project: Best Trip", "description": "Tourist review and advice platform developed for university course.", "elements":
+			[
+				"Software design using UML.",
+				"Desktop application developed using Java Swing",
+				"Web application developed using Symfony Framework",
+				"Mobile application developed using J2ME",
+				"Developed in team using the agile scrum framework"
+			]
+		},
+		{
+			"title":"2014 Academic project: Poulina", "description": "Simulating and configuring a multinational corporate network topology including network backbone using GNS3."
+		},
+		{
+			"title":"2012 Academic Project: Ping Pong", "description": "Pong like game developed for university course, including multiplayer and multiple difficulty level AI. Developed in C using SDL library."
+		}
+	],
+	"AboutMeEN" : [
+		{ "title" : "WHO I AM", "content" : " I'm Wael Ben Dhia an avid programmer from Tunisia. <br>I'm passionate about code, algorithmics, design and technology. <br>I'm currently studying software engineering at <a href='http://www.esprit-tn.com'>Esprit</a> in my final semester."},
+		{ "title" : "WHAT I CAN DO", "content" : " I can create websites, build servers and make Android and desktop applications. <br>I have experience with JEE, JSF, ASP.Net, .Net, Symfony and AngularJS frameworks and I'm always eager to learn more." },
+		{ "title" : "WHAT I DO ON MY OFF TIME", "content" : "I participate in programming and AI challenges, some samples can be found on my <a href='https://github.com/WaelBenDhia'>Github</a>. <br>I dabble in video game development, mostly small personal projects using Unity or UDK. <br>I play chess and video games (recently SOMA, Dark Souls 3, Evolve).<br>I'm a huge music nerd with a soft spot for punk and its derivatives and free jazz."},
+		{ "title" : "RESUME", "content" : "<a href='resumes/Wael BEN DHIA Resume en.pdf' download>English Resume</a>.<br><a href='resumes/Wael BEN DHIA Resume fr.pdf' download>French Resume</a>."}
+	]
+}

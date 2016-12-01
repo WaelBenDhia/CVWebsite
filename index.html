@@ -5,6 +5,7 @@
 	<script src="js/jquery-3.1.0.min.js"></script>
 	<script src="js/angular.min.js"></script>
 	<script src="js/angular-route.min.js"></script>
+	<script src="js/angular-sanitize.min.js"></script>
 	<script src="js/angular-scroll.min.js"></script>
 	<script src="js/CV.js">	</script>
 	<title>Wael Ben Dhia CV</title>
@@ -34,25 +35,11 @@
 	<div id="About" class="section">
 		<h1 class="section-title">About Me</h1>
 		<img src="images/profile.jpg" alt="Photo" class="profile">
-		<h2>WHO I AM</h2>
-		<span class="horizontal-seperator"></span>
-		<p>I'm Wael Ben Dhia an avid programmer from Tunisia.
-		<br>I'm passionate about code, algorithmics, design and technology.
-		<br>I'm currently studying software engineering at <a href="http://www.esprit-tn.com">Esprit</a> in my final semester.</p>
-		<h2>WHAT I CAN DO</h2>
-		<span class="horizontal-seperator"></span>
-		<p>I can create websites, build servers and make Android and desktop applications.
-		<br>I have experience with JEE, JSF, ASP.Net, .Net, Symfony and AngularJS frameworks and I'm always eager to learn more.</p>
-		<h2>WHAT I DO ON MY OFF TIME</h2>
-		<span class="horizontal-seperator"></span>
-		<p>I participate in programming and AI challenges, some samples can be found on my <a href="https://github.com/WaelBenDhia">Github</a>.
-		<br>I dabble in video game development, mostly small personal projects using Unity or UDK.
-		<br>I play chess and video games (recently SOMA, Dark Souls 3, Evolve).
-		<br>I'm a huge music nerd with a soft spot for punk and its derivatives and free jazz.</p>
-		<h2>RESUME</h2>
-		<span class="horizontal-seperator"></span>
-		<p><a href="resumes/Wael BEN DHIA Resume en.pdf" download>English Resume</a>.
-		<br><a href="resumes/Wael BEN DHIA Resume fr.pdf" download>French Resume</a>.</p>
+		<div ng-repeat="section in aboutMe">
+			<h2>{{section.title}}</h2>
+			<span class="horizontal-seperator"></span>
+			<p ng-bind-html="section.content"></p>
+		</div>
 	</div>
 <!--############################## HERE BE SKILLS ##############################-->
 	<div class="filler filler-1"></div>
@@ -159,73 +146,26 @@
 	<div class="filler"></div>
 	<div id="Education" class="section">
 		<h1 class="section-title">Education</h1>
-		<h2>2013-Present</h2>
-		<span class="horizontal-seperator"></span>
-		<h3>Degree in computer engineering</h3>
-		<p class="slightly-smaller">Esprit, Tunisia</p>
 
-		<h2>2008-2013</h2>
-		<span class="horizontal-seperator"></span>
-		<h3>1st and 2nd year BS degree in Mathematics and Computer Science</h3>
-		<p class="slightly-smaller">Universite Pierre et Marie Curie, France</p>
-
-		<h2>2008</h2>
-		<span class="horizontal-seperator"></span>
-		<h3>Baccalaureate in Science specialized in Physics and Chemistry with Honours</h3>
-		<p class="slightly-smaller">Jeddah French Internation School, Kingdom of Saudi Arabia</p>
+		<div ng-repeat="edu in education">
+			<h2>{{edu.time}}</h2>
+			<span class="horizontal-seperator"></span>
+			<h3>{{edu.title}}</h3>
+			<p class="slightly-smaller">{{edu.school}}</p>
+		</div>
 	</div>
 <!--############################## HERE BE PROJECTS ##############################-->
 	<div class="filler"></div>
 	<div id="Projects" class="section style2">
 		<h1 class="section-title">Projects</h1>
-		<h2>2016 Academic project: MOOC</h2>
-		<span class="horizontal-seperator"></span>
-		<p>Online learning platform developed for university course.</p>
-		<ul>
-			<li>Software design using UML.
-			<li>Back end developed using .Net framework and Java Enterprise Edition.</li>
-			<li>Back office desktop application developed with Java SWING.</li>
-			<li>Back office Android app developed.</li>
-			<li>Back office web application developed using ASP.Net framework.</li>
-			<li>Front office web application developed using Java Server Faces.</li>
-			<li>Developed in team using the agile scrum framework.</li>
-		</ul>
-
-		<h2>2015 Academic project: SABA</h2>
-		<span class="horizontal-seperator"></span>
-		<p>Integrated system project realised for university course.
-		<br>Simulating and configuring a multinational corporate network. My tasks were:</p>
-		<ul>
-			<li>Network subdivision and configuration</li>
-			<li>Installing and configuring Nagios monitoring server and agents</li>
-			<li>Installing and configuring Zoiper SIP server</li>
-		</ul>
-
-		<h2>2015 Internship: Zitouna Bank</h2>
-		<span class="horizontal-seperator"></span>
-		<p>Sharepoint application for searching and viewing bank statements for internal use.
-		<br>Developed using ASP.Net framework.</p>
-
-		<h2>2015 Academic project: Best Trip</h2>
-		<span class="horizontal-seperator"></span>
-		<p>Tourist review and advice platform developed for university course.</p>
-		<ul>
-			<li>Software design using UML.
-			<li>Desktop application developed using Java Swing</li>
-			<li>Web application developed using Symfony Framework</li>
-			<li>Mobile application developed using J2ME</li>
-			<li>Developed in team using the agile scrum framework</li>
-		</ul>
-
-		<h2>2014 Academic project: Poulina</h2>
-		<span class="horizontal-seperator"></span>
-		<p>Simulating and configuring a multinational corporate network topology including network backbone using GNS3.</p>
-
-
-
-		<h2>2012 Academic Project: Ping Pong</h2>
-		<span class="horizontal-seperator"></span>
-		<p>Pong like game developed for university course, including multiplayer and multiple difficulty level AI. Developed in C using SDL library.</p>
+		<div ng-repeat="project in projects">
+			<h2>{{project.title}}</h2>
+			<span class="horizontal-seperator"></span>
+			<p>{{project.description}}</p>
+			<ul>
+				<li ng-repeat="element in project.elements">{{element}}</li>
+			</ul>
+		</div>
 	</div>
 <!--############################## HERE BE CONTACT ##############################-->
 	<span class="filler" ></span>

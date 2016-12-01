@@ -1,13 +1,14 @@
-var thingsAboutMe = [
-	"Software engineering student",
-	"Frontend engineer",
-	"Backend engineer",
-	"Android developer",
-	"Technology enthusiast",
-	"Creative and ambitious"
-	];
-var app = angular.module('cvModule',['ngRoute', 'duScroll']);
-app.controller('controller', function($scope, $anchorScroll, $location, $interval, $document){
+var thingsAboutMe = [];
+
+var app = angular.module('cvModule',['ngRoute', 'duScroll', 'ngSanitize']);
+app.controller('controller', function($scope, $anchorScroll, $location, $interval, $document, $http){
+	$http.get('Data/stuff.json').success(function(response){
+		thingsAboutMe = response.ThingsAboutMeEN;
+		$scope.education = response.EducationEN;
+		$scope.projects = response.ProjectsEN;
+		$scope.aboutMe = response.AboutMeEN;
+	});
+
 	$scope.langToggler = "toggle-right";
 	$scope.selectedHome = $location.hash() == "Home" || $location.hash() == "" ? "navbar-selected" : "";
 	$scope.selectedAbout = $location.hash() == "About"  ? "navbar-selected" : "";
@@ -15,8 +16,8 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 	$scope.selectedEducation = $location.hash() == "Education" ? "navbar-selected" : "";
 	$scope.selectedProjects = $location.hash() == "Projects" ? "navbar-selected" : "";
 	$scope.selectedContact = $location.hash() == "Contact" ? "navbar-selected" : "";
-	$scope.thingsAboutMe = thingsAboutMe[0];
 	$scope.scrollPosition = 0;
+	$scope.thingsAboutMe = thingsAboutMe[0];
 
 	var scrollOffset = angular.element(document.getElementById('navbar')).height();
 	var scrollSpeed = 4;
