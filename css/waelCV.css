@@ -340,6 +340,7 @@ footer{
 	border-top: 0px !important;
 }
 footer .container{
+	display: inline-block;
 	width: 80%;
 	max-width: 800px;
 	min-width: 400px;

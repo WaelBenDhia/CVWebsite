@@ -1,7 +1,8 @@
 var thingsAboutMe = [];
-
+var headerHeight = 50;
 var app = angular.module('cvModule',['ngRoute', 'duScroll', 'ngSanitize']);
 app.controller('controller', function($scope, $anchorScroll, $location, $interval, $document, $http){
+	headerHeight = document.querySelector('header').getBoundingClientRect().height;
 	$http.get('Data/stuff.json').success(function(response){
 		thingsAboutMe = response.ThingsAboutMeEN;
 		$scope.education = response.EducationEN;
@@ -9,6 +10,7 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 		$scope.aboutMe = response.AboutMeEN;
 	});
 
+	$scope.toyName = "snake";
 	$scope.langToggler = "toggle-right";
 	$scope.selectedHome = $location.hash() == "Home" || $location.hash() == "" ? "navbar-selected" : "";
 	$scope.selectedAbout = $location.hash() == "About"  ? "navbar-selected" : "";
@@ -19,6 +21,10 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 	$scope.scrollPosition = 0;
 	$scope.thingsAboutMe = thingsAboutMe[0];
 
+	$scope.stop = function(){
+		console.log("toggle");
+		//toggleSnake();
+	}
 	var scrollOffset = angular.element(document.getElementById('navbar')).height();
 	var scrollSpeed = 4;
 	var langEN = true;
@@ -100,22 +106,23 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
     return function(scope, element, attrs) {
         angular.element($window).bind("scroll", function() {
         	scope.scrollPosition = $window.scrollY;
-        	if(document.querySelector('#Home').getBoundingClientRect().bottom >= 50)
+        	if(document.querySelector('#Home').getBoundingClientRect().bottom >= headerHeight)
         		scope.updateNavbar(-1);
-        	else if(document.querySelector('#About').getBoundingClientRect().bottom >= 50)
+        	else if(document.querySelector('#About').getBoundingClientRect().bottom >= headerHeight)
         		scope.updateNavbar(0);
-        	else if(document.querySelector('#Skills').getBoundingClientRect().bottom >= 50)
+        	else if(document.querySelector('#Skills').getBoundingClientRect().bottom >= headerHeight)
         		scope.updateNavbar(1);
-        	else if(document.querySelector('#Education').getBoundingClientRect().bottom >= 50)
+        	else if(document.querySelector('#Education').getBoundingClientRect().bottom >= headerHeight)
         		scope.updateNavbar(2);
-        	else if(document.querySelector('#Projects').getBoundingClientRect().bottom >= 50)
+        	else if(document.querySelector('#Projects').getBoundingClientRect().bottom >= headerHeight)
         		scope.updateNavbar(3);
         	else
         		scope.updateNavbar(4);
+        	toggleSnake(document.querySelector('#canvas').getBoundingClientRect().top > $window.innerHeight);
             scope.$apply();
         });
     };
 })
 .run(['$anchorScroll', function($anchorScroll) {
-	$anchorScroll.yOffset = screen.width<480 ? 100 : 50;
+	$anchorScroll.yOffset = headerHeight;
 }]);
