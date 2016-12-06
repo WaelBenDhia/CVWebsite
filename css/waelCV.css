@@ -432,6 +432,9 @@ a svg{
 	header{
 		height: 100px;
 	}
+	.background{
+	    background-size: 100%;
+	}
 	.filler{
 		height: 200px;
 	}
