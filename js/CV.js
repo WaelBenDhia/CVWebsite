@@ -100,7 +100,6 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 		var targetEl = angular.element(document.getElementById(target));
 		var scrollTime = Math.abs(targetEl.offset().top  - $scope.scrollPosition)/scrollSpeed;
 		$document.scrollToElement(targetEl, scrollOffset, scrollTime);
-		console.log(scrollTime);
 		$location.hash(target);
 		$anchorScroll.yOffset = scrollOffset;
 	}
@@ -110,7 +109,7 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
     return function(scope, element, attrs) {
         angular.element($window).bind("scroll", function() {
         	scope.scrollPosition = $window.scrollY;
-        	if(document.querySelector('#Home').getBoundingClientRect().bottom >= headerHeight)
+        	if(document.querySelector('#Home').getBoundingClientRect().bottom > headerHeight)
         		scope.updateNavbar(-1);
         	else if(document.querySelector('#About').getBoundingClientRect().bottom >= headerHeight)
         		scope.updateNavbar(0);

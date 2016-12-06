@@ -11,9 +11,9 @@
   --style1-fg-color: #000;
   --style2-bg-color: #2080ff;
   --style2-fg-color: #eee;
-  --link-hover-color: #FF660B;
-  --fourth-color: #FFDF6A;
-  --fifth-color: #EF798A;
+  --link-hover-color: #ff660b;
+  --fourth-color: #ffdf6a;
+  --fifth-color: #FB4B4E;
 }
 body {
 	display: inline-block;
@@ -27,7 +27,7 @@ h1{
 }
 h1.section-title{
 	font-size: 65px;
-	height: 55px;
+	height: 60px;
 	font-weight: bold;
 	margin-bottom: 20px !important;
 	width: 100%;
@@ -48,8 +48,8 @@ h3{
 	float: left;
 	width: 100%;
 	height: 50px;
-	border-top: 8px solid var(--style1-fg-color);
-	border-bottom: 8px solid var(--style1-fg-color);
+	/*border-bottom: 4px solid var(--style1-fg-color);
+	border-top: 4px solid var(--style1-fg-color);*/
 }
 .color1{
 	background-color: var(--style2-bg-color);
@@ -119,28 +119,25 @@ header{
 }
 .navbar li a{
 	width: 100%;
-	height: calc(100% - 4px);
+	height: 100%;
 	font-size: 32px;
 	font-size: 2.5vw;
 	font-weight: normal;
 	display:block;
 	cursor: pointer;
 	text-align: center;
-	border-top: 4px solid var(--style1-fg-color);
-	transition: border 0.1s ease;
+	transition: 0.2s ease;
 	display: flex;
 	justify-content: center; /* align horizontal */
 	align-items: center;
 }
 .navbar li a:hover{
 	color: var(--style2-bg-color);
-	border-top: 0px solid var(--style1-fg-color);
-	border-bottom: 4px solid var(--style2-bg-color);
 }
 .navbar-selected{
+	height: calc(100% - 4px) !important;
 	color:var(--style2-bg-color);
-	border-top: 0px solid var(--style1-fg-color) !important;
-	border-bottom: 4px solid var(--style2-bg-color) !important;
+	border-bottom: 8px solid var(--style2-bg-color);
 }
 .toggle-left{
 	display: block;
@@ -186,7 +183,6 @@ header{
 	padding:0;
 	width: 100%;
 	height: 100%;
-	border-bottom: 8px solid var(--style1-fg-color);
 	background-repeat: no-repeat;
 }
 .header-filler .color2{
