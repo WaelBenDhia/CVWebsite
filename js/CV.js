@@ -1,4 +1,6 @@
 var thingsAboutMe = [];
+var toyNames = ["Snake"];
+var toyCounter = 0;
 var headerHeight = 50;
 var app = angular.module('cvModule',['ngRoute', 'duScroll', 'ngSanitize']);
 app.controller('controller', function($scope, $anchorScroll, $location, $interval, $document, $http){
@@ -10,7 +12,7 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 		$scope.aboutMe = response.AboutMeEN;
 	});
 
-	$scope.toyName = "snake";
+	$scope.toyName = toyNames[toyCounter];
 	$scope.langToggler = "toggle-right";
 	$scope.selectedHome = $location.hash() == "Home" || $location.hash() == "" ? "navbar-selected" : "";
 	$scope.selectedAbout = $location.hash() == "About"  ? "navbar-selected" : "";
@@ -19,18 +21,20 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 	$scope.selectedProjects = $location.hash() == "Projects" ? "navbar-selected" : "";
 	$scope.selectedContact = $location.hash() == "Contact" ? "navbar-selected" : "";
 	$scope.scrollPosition = 0;
-	$scope.thingsAboutMe = thingsAboutMe[0];
+	$scope.thingsAboutMe = "Engineer";
+	$scope.thingsOpacity = "transparent";
 
-	$scope.stop = function(){
-		console.log("toggle");
-		//toggleSnake();
+	$scope.changeGame = function(){
+		toyCounter = (toyCounter+1)%toyNames.length;
+		changeGame(toyCounter);
+		$scope.toyName = toyNames[toyCounter];
 	}
+
 	var scrollOffset = angular.element(document.getElementById('navbar')).height();
 	var scrollSpeed = 4;
 	var langEN = true;
 
 	$scope.toggleLanguage = function(){
-		console.log("TOGGLING");
 		if(langEN)
 			$scope.langToggler = "toggle-right";
 		else
@@ -118,7 +122,7 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
         		scope.updateNavbar(3);
         	else
         		scope.updateNavbar(4);
-        	toggleSnake(document.querySelector('#canvas').getBoundingClientRect().top > $window.innerHeight);
+        	//toggleGame(document.querySelector('#canvas').getBoundingClientRect().top > $window.innerHeight);
             scope.$apply();
         });
     };

@@ -8,8 +8,11 @@
 	<script src="js/angular-sanitize.min.js"></script>
 	<script src="js/angular-scroll.min.js"></script>
 	<script src="js/p5.min.js"></script>
-	<script src="js/snake.js"></script>
 	<script src="js/CV.js">	</script>
+
+	<!-- <script src="js/snakeGame.js"></script>
+	<script src="js/sketch.js"></script> -->
+
 	<title>Wael Ben Dhia CV</title>
 </head>
 
@@ -29,24 +32,26 @@
 	</header>
 	<div class="background"></div>
 	<div class="header-filler style2" id="Home">
-		<h1>Wael Ben Dhia</h1>
-		<h2 class="{{thingsOpacity}}">{{thingsAboutMe}}</h2>
+		<div class="mast">
+			<h1>Wael Ben Dhia</h1>
+			<h2 class="{{thingsOpacity}}">{{thingsAboutMe}}</h2>
+		</div>
 	</div>
 <!--############################## HERE BE ABOUT ##############################-->
-	<div class="filler"></div>
 	<div id="About" class="section">
-		<h1 class="section-title">About Me</h1>
+		<h1 class="section-title">about me</h1>
 		<img src="images/profile.jpg" alt="Photo" class="profile">
-		<div ng-repeat="section in aboutMe">
+		<div ng-repeat="section in aboutMe" class="section-content">
 			<h2>{{section.title}}</h2>
 			<span class="horizontal-seperator"></span>
-			<p ng-bind-html="section.content"></p>
+			<div class="section-content-sub">
+				<p ng-bind-html="section.content"></p>
+			</div>
 		</div>
 	</div>
 <!--############################## HERE BE SKILLS ##############################-->
-	<div class="filler filler-1"></div>
-	<div id="Skills" class="section style2">
-		<h1 class="section-title">Skills</h1>
+	<div id="Skills" class="section">
+		<h1 class="section-title">skills</h1>
 		<div class="skills">
 			<div class="skill-set">
 				<h2>Programming Languages</h2>
@@ -145,34 +150,35 @@
 		</div>
 	</div>
 <!--############################## HERE BE EDUCATION ##############################-->
-	<div class="filler"></div>
 	<div id="Education" class="section">
-		<h1 class="section-title">Education</h1>
+		<h1 class="section-title">education</h1>
 
-		<div ng-repeat="edu in education">
+		<div ng-repeat="edu in education" class="section-content">
 			<h2>{{edu.time}}</h2>
 			<span class="horizontal-seperator"></span>
-			<h3>{{edu.title}}</h3>
-			<p class="slightly-smaller">{{edu.school}}</p>
+			<div class="section-content-sub">
+				<h3>{{edu.title}}</h3>
+				<p class="slightly-smaller">{{edu.school}}</p>
+			</div>
 		</div>
 	</div>
 <!--############################## HERE BE PROJECTS ##############################-->
-	<div class="filler"></div>
-	<div id="Projects" class="section style2">
-		<h1 class="section-title">Projects</h1>
-		<div ng-repeat="project in projects">
+	<div id="Projects" class="section">
+		<h1 class="section-title">projects</h1>
+		<div ng-repeat="project in projects" class="section-content">
 			<h2>{{project.title}}</h2>
 			<span class="horizontal-seperator"></span>
-			<p>{{project.description}}</p>
-			<ul>
-				<li ng-repeat="element in project.elements">{{element}}</li>
-			</ul>
+			<div class="section-content-sub">
+				<p>{{project.description}}</p>
+				<ul>
+					<li ng-repeat="element in project.elements">{{element}}</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 <!--############################## HERE BE CONTACT ##############################-->
-	<span class="filler" ></span>
 	<div id="Contact" class="section contact">
-		<h1 class="section-title">Contact</h1>
+		<h1 class="section-title">contact</h1>
 		<ul>
 			<li><a href="https://www.facebook.com/wael.dhia" title="Facebook"><svg viewBox="0 0 64 64"><use x="0" y="0" width="0" height="0" xlink:href="images/logo/facebook.svg#path4160"></use></svg></a></li>
 			<li><a href="https://github.com/WaelBenDhia/" title="GitHub"><svg viewBox="0 0 64 64"><use x="0" y="0" width="0" height="0" xlink:href="images/logo/github.svg#path16"></use></svg></a></li>
@@ -190,9 +196,10 @@
 				<p>Email icon made by <a href="http://www.flaticon.com/authors/chanut-is-industries" title="Chanut is Industries">Chanut is Industries</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></p>
 			</div>
 		</div>
-		<div id="canvas" class="container">
-			<h2>Thanks for visiting, here's {{toyName}}!</h2>
-		</div>
+		<h2>Thanks for visiting!</h2>
+		<!-- <div id="canvas" class="container">
+			<h2>Thanks for visiting, here's <a ng-click="changeGame()">{{toyName}}</a>!</h2>
+		</div> -->
 	</footer>
 </body>
 </html>

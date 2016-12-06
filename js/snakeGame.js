@@ -1,15 +1,34 @@
 var blocksize = 20;
 var snake;
 var food;
-var w;
-var h;
 var col;
 var row;
-var offsetx;
-var offsety;
 var snakeHeadColor = {r: 128, g: 255, b: 160};
 var paused = true;
 
+
+function SnakeGame(){
+	this.setup = function() {
+		col = w/blocksize;
+		row = h/blocksize;
+		snake = new Snake();
+		food = randomLocation();
+		frameRate(0);
+	}
+
+	this.draw = function() {
+		background(34);
+		noStroke();
+		snake.think();
+		snake.update();
+		fill((food.life/50)*255,((50-food.life)/50)*128,0);
+		rect(food.x*blocksize,food.y*blocksize, blocksize, blocksize);
+		snake.show();
+		food.life --;
+		if(food.life == 0)
+			food = randomLocation();
+	}
+}
 function inbounds(x, y){
 	return x >= 0 && x < col && y >= 0 && y<row;
 }
@@ -24,34 +43,6 @@ function toggleGame(pause){
 	}else{
 		frameRate(20);
 		paused = false;
-	}
-}
-function setup() {
-	var cnv = createCanvas(400, 400);
-	w = 400;
-	h = 400;
-	offsetx = (width-w)/2;
-	offsety = (height-h)/2;
-	col = w/blocksize;
-	row = h/blocksize;
-	cnv.parent('canvas');
-	snake = new Snake();
-	food = randomLocation();
-	frameRate(0);
-}
-
-function draw() {
-	if(!paused){
-		background(32);
-		noStroke();
-		snake.think();
-		snake.update();
-		fill((food.life/50)*255,((50-food.life)/50)*128,0);
-		rect(food.x*blocksize+offsetx,food.y*blocksize+offsety, blocksize, blocksize);
-		snake.show();
-		food.life --;
-		if(food.life == 0)
-			food = randomLocation();
 	}
 }
 
@@ -84,7 +75,7 @@ function Snake(){
 		}else{
 			this.survive();
 		}
-	};
+	}
 
 	this.getLastTail = function(){
 		if(this.length > 1){
@@ -206,13 +197,15 @@ function Snake(){
 			this.yspeed = 1;
 			break;
 		}
-	};
+	}
+
 	this.collideExternal = function(x,y){
 		if(x == this.x && y == this.y)
 			return true;
 		else
 			return this.collide(x, y);
 	}
+
 	this.collide = function(x, y, depth){
 		if(!inbounds(x,y))
 			return true;
@@ -228,9 +221,11 @@ function Snake(){
 		else
 			this.tail.addTail();
 	}
+
 	this.update = function(){
-		if(this.tail != null)
+		if(this.tail != null){
 			this.tail.update();
+		}
 		this.x = this.x+this.xspeed;
 		this.y = this.y+this.yspeed;
 		if(this.x == food.x && this.y == food.y){
@@ -243,14 +238,14 @@ function Snake(){
 			this.x = col/2;
 			this.y = row/2;
 		}
-	};
+	}
 
 	this.show = function(){
 		fill(snakeHeadColor.r, snakeHeadColor.g, snakeHeadColor.b);
-		rect(offsetx+this.x*blocksize, offsety+this.y*blocksize, blocksize, blocksize);
+		rect(this.x*blocksize, this.y*blocksize, blocksize, blocksize);
 		fill(0);
-		rect(offsetx+this.x*blocksize + blocksize/2 - blocksize/8 + this.xspeed * blocksize/8 + this.yspeed * -blocksize/5, offsety+this.y*blocksize + blocksize/2 - blocksize/8 + this.xspeed * blocksize/5 + this.yspeed * blocksize/8, blocksize/4, blocksize/4 );
-		rect(offsetx+this.x*blocksize + blocksize/2 - blocksize/8 + this.xspeed * blocksize/8 + this.yspeed * blocksize/5, offsety+this.y*blocksize + blocksize/2 - blocksize/8 + this.xspeed * -blocksize/5 + this.yspeed * blocksize/8, blocksize/4, blocksize/4 );
+		rect(this.x*blocksize + blocksize/2 - blocksize/8 + this.xspeed * blocksize/8 + this.yspeed * -blocksize/5, this.y*blocksize + blocksize/2 - blocksize/8 + this.xspeed * blocksize/5 + this.yspeed * blocksize/8, blocksize/4, blocksize/4 );
+		rect(this.x*blocksize + blocksize/2 - blocksize/8 + this.xspeed * blocksize/8 + this.yspeed * blocksize/5, this.y*blocksize + blocksize/2 - blocksize/8 + this.xspeed * -blocksize/5 + this.yspeed * blocksize/8, blocksize/4, blocksize/4 );
 		if(this.tail!=null)
 			this.tail.show(snakeHeadColor.r, snakeHeadColor.g, snakeHeadColor.b);
 	}
@@ -302,6 +297,6 @@ function Tail(master){
 		if(this.tail !=null )
 			this.tail.show(r+5, g+2, b+6);
 		fill(newR, newG, newB);
-		rect(offsetx+this.x*blocksize, offsety+this.y*blocksize, blocksize, blocksize);
+		rect(this.x*blocksize, this.y*blocksize, blocksize, blocksize);
 	}
 }

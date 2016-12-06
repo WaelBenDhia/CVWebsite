@@ -50,13 +50,13 @@
 			"title":"2014 Academic project: Poulina", "description": "Simulating and configuring a multinational corporate network topology including network backbone using GNS3."
 		},
 		{
-			"title":"2012 Academic Project: Ping Pong", "description": "Pong like game developed for university course, including multiplayer and multiple difficulty level AI. Developed in C using SDL library."
+			"title":"2012 Academic project: Ping Pong", "description": "Pong like game developed for university course, including multiplayer and multiple difficulty level AI. Developed in C using SDL library."
 		}
 	],
 	"AboutMeEN" : [
 		{ "title" : "WHO I AM", "content" : " I'm Wael Ben Dhia an avid programmer from Tunisia. <br>I'm passionate about code, algorithmics, design and technology. <br>I'm currently studying software engineering at <a href='http://www.esprit-tn.com'>Esprit</a> in my final semester."},
 		{ "title" : "WHAT I CAN DO", "content" : " I can create websites, build servers and make Android and desktop applications. <br>I have experience with JEE, JSF, ASP.Net, .Net, Symfony and AngularJS frameworks and I'm always eager to learn more." },
 		{ "title" : "WHAT I DO ON MY OFF TIME", "content" : "I participate in programming and AI challenges, some samples can be found on my <a href='https://github.com/WaelBenDhia'>Github</a>. <br>I dabble in video game development, mostly small personal projects using Unity or UDK. <br>I play chess and video games (recently SOMA, Dark Souls 3, Evolve).<br>I'm a huge music nerd with a soft spot for punk and its derivatives and free jazz."},
-		{ "title" : "RESUME", "content" : "<a href='resumes/Wael BEN DHIA Resume en.pdf' download>English Resume</a>.<br><a href='resumes/Wael BEN DHIA Resume fr.pdf' download>French Resume</a>."}
+		{ "title" : "RESUME", "content" : "<a href='resumes/Wael BEN DHIA Resume en.pdf' download>English Resume</a><br><a href='resumes/Wael BEN DHIA Resume fr.pdf' download>French Resume</a>"}
 	]
 }
