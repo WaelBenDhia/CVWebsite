@@ -19,7 +19,6 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 	$scope.selectedSkills = $location.hash() == "Skills" ? "navbar-selected" : "";
 	$scope.selectedEducation = $location.hash() == "Education" ? "navbar-selected" : "";
 	$scope.selectedProjects = $location.hash() == "Projects" ? "navbar-selected" : "";
-	$scope.selectedContact = $location.hash() == "Contact" ? "navbar-selected" : "";
 	$scope.scrollPosition = 0;
 	$scope.thingsAboutMe = "Engineer";
 	$scope.thingsOpacity = "transparent";
@@ -72,7 +71,6 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 		$scope.selectedSkills = ind == 1 ? "navbar-selected" : "";
 		$scope.selectedEducation = ind == 2 ? "navbar-selected" : "";
 		$scope.selectedProjects = ind == 3 ? "navbar-selected" : "";
-		$scope.selectedContact = ind == 4 ? "navbar-selected" : "";
 	}
 
 	$scope.updateSelectedSection = function(ind){
@@ -92,9 +90,6 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 				break;
 			case 3:
 				target = "Projects";
-				break;
-			case 4:
-				target = "Contact";
 				break;
 		}
 		var targetEl = angular.element(document.getElementById(target));

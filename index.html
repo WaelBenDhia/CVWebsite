@@ -27,7 +27,12 @@
 			<li><a class="{{selectedSkills}}" ng-click="updateSelectedSection(1)">Skills</a></li>
 			<li><a class="{{selectedEducation}}" ng-click="updateSelectedSection(2)">Education</a></li>
 			<li><a class="{{selectedProjects}}" ng-click="updateSelectedSection(3)">Projects</a></li>
-			<li><a class="{{selectedContact}}" ng-click="updateSelectedSection(4)">Contact</a></li>
+			<li class="contact-burger">
+				<a class="secondary-link" >Contact</a>
+				<a class="secondary-link" href="mailto:wael.bendhia@esprit.tn" title="Email"><svg viewBox="0 0 64 64"><use x="0" y="0" width="0" height="0" xlink:href="images/logo/email.svg#path7"></use></svg><p>Email</p></a>
+				<a class="secondary-link" href="https://github.com/WaelBenDhia/" title="GitHub"><svg viewBox="0 0 64 64"><use x="0" y="0" width="0" height="0" xlink:href="images/logo/github.svg#path16"></use></svg><p>GitHub</p></a>
+				<a class="secondary-link" href="https://www.facebook.com/wael.dhia" title="Facebook"><svg viewBox="0 0 64 64"><use x="0" y="0" width="0" height="0" xlink:href="images/logo/facebook.svg#path4160"></use></svg><p>Facebook</p></a>
+			</li>
 		</ul>
 	</header>
 	<div class="background"></div>
@@ -194,20 +199,6 @@
 			</div>
 		</div>
 	</div>
-<!--############################## HERE BE CONTACT ##############################-->
-	<div class="filler color1" >
-		<div class="color4"></div>
-		<div class="color3"></div>
-		<div class="color2"></div>
-	</div>
-	<div id="Contact" class="section contact">
-		<h1 class="section-title">Contact</h1>
-		<ul>
-			<li><a href="https://www.facebook.com/wael.dhia" title="Facebook"><svg viewBox="0 0 64 64"><use x="0" y="0" width="0" height="0" xlink:href="images/logo/facebook.svg#path4160"></use></svg></a></li>
-			<li><a href="https://github.com/WaelBenDhia/" title="GitHub"><svg viewBox="0 0 64 64"><use x="0" y="0" width="0" height="0" xlink:href="images/logo/github.svg#path16"></use></svg></a></li>
-			<li><a href="mailto:wael.bendhia@esprit.tn" title="Email"><svg viewBox="0 0 64 64"><use x="0" y="0" width="0" height="0" xlink:href="images/logo/email.svg#path7"></use></svg></a></li>
-		</ul>
-	</div>
 	<footer class="section style2">
 		<div class="container">
 			<div class="left">
@@ -220,9 +211,6 @@
 			</div>
 		</div>
 		<h2>Thanks for visiting!</h2>
-		<!-- <div id="canvas" class="container">
-			<h2>Thanks for visiting, here's <a ng-click="changeGame()">{{toyName}}</a>!</h2>
-		</div> -->
 	</footer>
 </body>
 </html>
