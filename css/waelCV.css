@@ -1,21 +1,29 @@
 /* Universal stuff */
-@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Raleway:200');
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
 
 * {
-    font-family: var(--font-sans-serif), sans-serif;
+    font-family: var(--font-body);
 }
 /*#2080ff*/
 :root {
-  --style1-bg-color: rgba(240, 240, 240, 0.95);
-  --style1-bg-color-transparent: rgba(255, 255, 255, 0.75);
-  --style1-fg-color: #000;
-  --style2-bg-color: #2080ff;
-  --style2-fg-color: #eee;
-  --link-hover-color: #ff660b;
-  --fourth-color: #ffdf6a;
-  --fifth-color: #FB4B4E;
-  --font-sans-serif: "Raleway";
-  --font-serif: "Libre Baskerville";
+	--white-color: #eee;
+	--white-color-semi-transparent: rgba(240, 240, 240, 0.95);
+	--white-color-transparent: rgba(255, 255, 255, 0.75);
+	--black-color: #000;
+
+	--first-color: #2080ff;
+	--second-color: #ff660b;
+	--third-color: #ffdf6a;
+	--fourth-color: #FB4B4E;
+
+	/* Alternative 1 color palette
+	--first-color: #4ECDC4;
+	--second-color: #C7F464;
+	--third-color: #FF6B6B;
+	--fourth-color: #C44D58;
+	*/
+	--font-body: "Raleway", sans-serif;
+	--font-heading: "Raleway", sans-serif;
 }
 body {
 	display: inline-block;
@@ -28,9 +36,9 @@ h1{
 	font-weight: lighter;
 }
 h1.section-title{
-	font-family: var(--font-sans-serif), serif;
+	font-family: var(--font-heading);
 	font-size: 65px;
-	height: 61px;
+	height: 66px;
 	font-weight: normal;
 	margin-bottom: 20px !important;
 	width: 100%;
@@ -51,20 +59,20 @@ h3{
 	float: left;
 	width: 100%;
 	height: 50px;
-	/*border-bottom: 4px solid var(--style1-fg-color);
-	border-top: 4px solid var(--style1-fg-color);*/
+	/*border-bottom: 4px solid var(--black-color);
+	border-top: 4px solid var(--black-color);*/
 }
 .color1{
-	background-color: var(--style2-bg-color);
+	background-color: var(--first-color);
 }
 .color2{
-	background-color: var(--link-hover-color);
+	background-color: var(--second-color);
 }
 .color3{
-	background-color: var(--fourth-color);
+	background-color: var(--third-color);
 }
 .color4{
-	background-color: var(--fifth-color);
+	background-color: var(--fourth-color);
 }
 .filler div{
 	width: 100px;
@@ -97,9 +105,9 @@ header{
 	width: 100%;
 	height: 50px;
 	z-index: 10;
-	color: var(--style1-fg-color);
-	background-color:var(--style1-bg-color);
-	background-color:var(--style1-bg-color-transparent);
+	color: var(--black-color);
+	background-color:var(--white-color-semi-transparent);
+	background-color:var(--white-color-transparent);
 }
 .navbar{
 	width: 80%;
@@ -134,12 +142,12 @@ header{
 	align-items: center;
 }
 .navbar li a:hover{
-	color: var(--style2-bg-color);
+	color: var(--first-color);
 }
 .navbar-selected{
 	height: calc(100% - 4px) !important;
-	color:var(--style2-bg-color);
-	border-bottom: 8px solid var(--style2-bg-color);
+	color:var(--first-color);
+	border-bottom: 8px solid var(--first-color);
 }
 .toggle-left{
 	display: block;
@@ -149,8 +157,8 @@ header{
 	width: 50px;
 	overflow: hidden;
 	height: 100%;
-	border-left: 5px solid var(--style2-bg-color);
-	border-right: 45px solid var(--style1-fg-color);
+	border-left: 5px solid var(--first-color);
+	border-right: 45px solid var(--black-color);
 	transition: border 0.3s linear;
 }
 .toggle-right{
@@ -161,8 +169,8 @@ header{
 	width: 50px;
 	overflow: hidden;
 	height: 100%;
-	border-left: 45px solid var(--style1-fg-color);
-	border-right: 5px solid var(--style2-bg-color);
+	border-left: 45px solid var(--black-color);
+	border-right: 5px solid var(--first-color);
 	transition: border 0.3s linear;
 }
 .toggle-inside{
@@ -214,7 +222,7 @@ header{
 }
 .header-filler h1{
 	font-size: 90px;
-	font-family: var(--font-serif), serif;
+	font-family: var(--font-heading);
 	margin :0;
 }
 .header-filler h2{
@@ -243,13 +251,13 @@ header{
 	top: 0;
 	bottom: 0;
 	text-align: center;
-	background-color: var(--style1-bg-color);
-	color: var(--style1-fg-color);
+	background-color: var(--white-color-semi-transparent);
+	color: var(--black-color);
 }
 .section .horizontal-seperator{
 	display: inline-block;
 	float: left;
-	background-color: var(--style1-fg-color);
+	background-color: var(--black-color);
 	height: 0;
 	margin-top: 0;
 	margin-bottom: 0;
@@ -267,7 +275,7 @@ header{
 img.profile{
 	max-width: 300px;
 	border-radius: 50%;
-	box-shadow: 0 0 0px 2px var(--style1-fg-color);
+	box-shadow: 0 0 0px 2px var(--black-color);
 }
 .section h1, .section h2, .section h3{
 	margin: auto;
@@ -288,6 +296,7 @@ img.profile{
 }
 
 .section-content h2{
+	font-weight: bold;
 	display: inline-block;
 	float: left;
 	padding-right: 12px;
@@ -313,7 +322,7 @@ p.slightly-smaller{
 	font-size: 20px;
 }
 .section a{
-	color: var(--link-hover-color);
+	color: var(--second-color);
 	font-weight: bold;
 	text-decoration: none;
 	cursor: pointer;
@@ -323,14 +332,14 @@ p.slightly-smaller{
 	color: black;
 }
 .style2{
-	color: var(--style2-fg-color);
-	background-color: var(--style2-bg-color);
+	color: var(--white-color);
+	background-color: var(--first-color);
 }
 .section.style2 a:hover{
 	color: white;
 }
 .style2 .horizontal-seperator{
-	background-color: var(--style1-fg-color);
+	background-color: var(--black-color);
 }
 .skills{
 	display: inline-block;
@@ -354,7 +363,7 @@ p.slightly-smaller{
 .skills .vertical-seperator{
 	display: inline-block;
 	float: left;
-	background-color: var(--style1-fg-color);
+	background-color: var(--black-color);
 	height: 120px;
 	margin-top: 110px;
 	margin-bottom: 20px;
@@ -363,7 +372,7 @@ p.slightly-smaller{
 .skills .horizontal-seperator{
 	display: inline-block;
 	float: left;
-	background-color: var(--style1-fg-color);
+	background-color: var(--black-color);
 	height: 1px;
 	margin-bottom: 0px;
 	margin-top: 0px;
@@ -378,7 +387,7 @@ p.slightly-smaller{
 	margin-bottom: 0;
 }
 .skill-set table{
-	color: var(--style1-fg-color);
+	color: var(--black-color);
 	width: 100%;
 	font-size: 22px;
 	text-align: center;
@@ -444,7 +453,7 @@ footer p{
 .vertical-seperator{
 	display: inline-block;
 	float: left;
-	background-color: var(--style2-fg-color);
+	background-color: var(--white-color);
 	width: 1px;
 	height: 88px;
 }
@@ -488,7 +497,7 @@ a svg{
 	.section .horizontal-seperator{
 		display: inline-block;
 		float: left;
-		background-color: var(--style1-fg-color);
+		background-color: var(--black-color);
 		height: 1px;
 		margin-top: 10px;
 		margin-bottom: 10px;
@@ -502,7 +511,7 @@ a svg{
 	}
 	.skill-set table{
 		font-size: 30px;
-		border: 1px solid var(--style1-fg-color);
+		border: 1px solid var(--black-color);
 	}
 	.skills .vertical-seperator{
 		width: 0;
