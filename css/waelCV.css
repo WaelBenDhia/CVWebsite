@@ -168,6 +168,16 @@ li.contact-burger:hover{
 	color: var(--second-color);
 }
 
+.expander{
+	color: var(--second-color) !important;
+	height: 46px !important;
+	border-bottom: 4px solid var(--second-color);
+}
+
+.expander:hover{
+	color: var(--black-color) !important;
+}
+
 .secondary-link p{
 	float: left;
 	font-size: 1.9vw;
@@ -644,4 +654,7 @@ footer a svg{
 		height: 400px;
 	}
 
+	.expander{
+		height: 96px !important;
+	}
 }
