@@ -7,7 +7,7 @@
 /*#2080ff*/
 :root {
 	--white-color: #eee;
-	--white-color-semi-transparent: rgba(240, 240, 240, 0.95);
+	--white-color-semi-transparent: rgba(255, 255, 255, 0.95);
 	--white-color-transparent: rgba(255, 255, 255, 0.75);
 	--black-color: #000;
 
@@ -276,8 +276,10 @@ footer .color4{
 	right: 0;
 }
 .mast{
+	position: relative;
 	width: 100%;
-	margin-top: 20%;
+	top: 50%;
+	transform: translateY(-50%);
 }
 .header-filler h1{
 	font-size: 90px;
@@ -656,5 +658,14 @@ footer a svg{
 
 	.expander{
 		height: 96px !important;
+	}
+
+	.secondary-link p{
+		font-size: 0;
+		display: block;
+		width: 0;
+		height: 0;
+		margin-left: 0;
+		margin-right: 0;
 	}
 }
