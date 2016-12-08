@@ -1,0 +1,43 @@
+footer{
+	position: relative;
+	background-color: #222 !important;
+	border-bottom: 0px !important;
+	padding-top: 16px !important;
+	padding-bottom: 16px !important;
+	border-top: 0px !important;
+}
+
+footer .container{
+	display: inline-block;
+	width: 80%;
+	max-width: 800px;
+	min-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+footer p{
+	font-size: 20px !important;
+}
+
+.vertical-seperator{
+	display: inline-block;
+	float: left;
+	background-color: var(--white-color);
+	width: 1px;
+	height: 88px;
+}
+
+.left{
+	display: inline-block;
+	float: left;
+	margin-top: auto;
+	width: calc(50% - 1px);
+}
+
+.right{
+	display: inline-block;
+	float: left;
+	margin-top: auto;
+	width: 50%;
+}

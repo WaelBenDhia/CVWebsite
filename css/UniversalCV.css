@@ -1,0 +1,271 @@
+* {
+    font-family: var(--font-body);
+    font-weight: 200;
+}
+
+:root {
+	--white-color: #eee;
+	--white-color-semi-transparent: rgba(255, 255, 255, 0.95);
+	--white-color-transparent: rgba(255, 255, 255, 0.75);
+	--black-color: #000;
+
+	--first-color: #2080ff;
+	--second-color: #ff660b;
+	--third-color: #ffdf6a;
+	--fourth-color: #FB4B4E;
+	--font-heading: "Raleway", sans-serif;
+	--font-subheading: "Raleway", sans-serif;
+	--font-body: "Montserrat", sans-serif;
+}
+
+body {
+	display: inline-block;
+	float: left;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+a{
+	font-weight: 300;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+h1{
+	font-family: var(--font-heading);
+	font-size: 50px;
+}
+
+h2{
+	font-family: var(--font-subheading);
+	font-size: 30px;
+	font-weight: 400;
+}
+
+h3{
+	font-family: var(--font-subheading);
+	font-size: 26px;
+}
+
+.filler{
+	display: inline-block;
+	float: left;
+	width: 100%;
+	height: 50px;
+	overflow: hidden;
+}
+
+.filler div{
+	width: 5vw;
+	height: 50px;
+	float: right;
+}
+
+.color1{
+	background-color: var(--first-color);
+}
+
+.color2{
+	background-color: var(--second-color);
+}
+
+.color3{
+	background-color: var(--third-color);
+}
+
+.color4{
+	background-color: var(--fourth-color);
+}
+
+.background{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background-image: url('../images/backgrounds/pattern223.svg');
+	background-position: center;
+    background-size: 50%;
+}
+
+/* Navbar Stuff */
+
+header{
+	display: block;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	padding:0;
+	width: 100%;
+	height: 50px;
+	z-index: 10;
+	color: var(--black-color);
+	background-color: var(--white-color-transparent);
+}
+
+.navbar{
+	width: 80%;
+	height: 100%;
+	list-style-type:none;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding:0;
+	overflow: visible;
+}
+
+.navbar li{
+	width: calc(100% / 6);
+	max-width: 1000px;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+	transition: height 0.5s ease;
+}
+
+.navbar li a{
+	width: 100%;
+	height: 50px;
+	font-size: 2.5vw;
+	font-weight: 300;
+	display:block;
+	cursor: pointer;
+	text-align: center;
+	transition: 0.2s ease;
+	display: flex;
+	color: var(--black-color);
+	justify-content: center; /* align horizontal */
+	align-items: center;
+	text-decoration: none;
+}
+
+.navbar svg{
+	margin: 5px;
+	height: 40px;
+	width: 40px;
+	fill: currentColor;
+	float: left;
+	display: block;
+}
+
+li.contact-burger:hover{
+	height: 200px;
+}
+
+.contact-burger .secondary-link{
+	background-color: var(--white-color-transparent);
+	color: var(--second-color);
+}
+
+.expander{
+	color: var(--second-color) !important;
+	height: 46px !important;
+	border-bottom: 4px solid var(--second-color);
+}
+
+.expander:hover{
+	color: var(--black-color) !important;
+}
+
+.secondary-link p{
+	float: left;
+	font-size: 1.9vw;
+	display: block;
+	margin-left: 0px;
+	margin-right: auto;
+}
+
+.contact-burger .secondary-link:hover{
+	color: var(--black-color);
+}
+
+.navbar li a:hover{
+	color: var(--first-color);
+}
+
+.navbar-selected{
+	height: calc(100% - 4px) !important;
+	color:var(--first-color) !important;
+	border-bottom: 8px solid var(--first-color);
+}
+
+/* Masthead stuff */
+
+.header-filler{
+	position: relative;
+	display: inline-block;
+	float: left;
+	text-align: center;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	padding:0;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+}
+
+.header-filler .color1,
+.header-filler .color2,
+.header-filler .color3,
+.header-filler .color4,
+footer .color1,
+footer .color2,
+footer .color3,
+footer .color4{
+	position: absolute;
+	bottom: 0px;
+	height: 50px;
+	width: 5vw;
+}
+
+.header-filler .color1,
+footer .color1{
+	right: 15vw;
+}
+
+.header-filler .color2,
+footer .color2{
+	right: 10vw;
+}
+
+.header-filler .color3,
+footer .color3{
+	right: 5vw;
+}
+
+.header-filler .color4,
+footer .color4{
+	right: 0;
+}
+
+.mast{
+	position: relative;
+	width: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.header-filler h1{
+	font-size: 90px;
+	margin :0;
+}
+
+.header-filler h2{
+	transition: 0.5s linear opacity;
+	font-size: 40px;
+}
+
+.transparent{
+	opacity: 0;
+	transition: 0.5s linear opacity;
+}
+
+.opaque{
+	opacity: 1;
+	transition: 0.5s linear opacity;
+}
