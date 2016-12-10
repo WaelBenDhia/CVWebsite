@@ -43,6 +43,7 @@ h2{
 
 h3{
 	font-family: var(--font-subheading);
+	font-weight: 400;
 	font-size: 26px;
 }
 
@@ -199,6 +200,7 @@ li.contact-burger:hover{
 	display: inline-block;
 	float: left;
 	text-align: center;
+	overflow: hidden;
 	left: 0;
 	right: 0;
 	top: 0;

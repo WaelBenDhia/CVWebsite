@@ -11,7 +11,6 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 		$scope.projects = response.ProjectsEN;
 		$scope.aboutMe = response.AboutMeEN;
 	});
-	console.log(thingsAboutMe);
 	$scope.toyName = toyNames[toyCounter];
 	$scope.langToggler = "toggle-right";
 	$scope.selectedHome = $location.hash() == "Home" || $location.hash() == "" ? "navbar-selected" : "";
