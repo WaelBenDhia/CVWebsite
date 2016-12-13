@@ -271,3 +271,16 @@ footer .color4{
 	opacity: 1;
 	transition: 0.5s linear opacity;
 }
+.animate-show {
+	opacity: 1;
+	height: initial;
+}
+
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+	transition: opacity linear 0.5s;
+}
+
+.animate-show.ng-hide {
+	opacity: 0;
+	height: 0px;
+}

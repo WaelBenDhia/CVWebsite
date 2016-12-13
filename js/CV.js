@@ -1,16 +1,22 @@
+var app = angular.module('cvModule',['ngAnimate', 'ngRoute', 'duScroll', 'ngSanitize']);
 var thingsAboutMe = [];
 var toyNames = ["Snake"];
 var toyCounter = 0;
 var headerHeight = 50;
-var app = angular.module('cvModule',['ngRoute', 'duScroll', 'ngSanitize']);
+
 app.controller('controller', function($scope, $anchorScroll, $location, $interval, $document, $http){
 	headerHeight = document.querySelector('header').getBoundingClientRect().height;
+	$scope.dataLoading = true;
+
 	$http.get('Data/stuff.json').success(function(response){
 		thingsAboutMe = response.ThingsAboutMeEN;
 		$scope.education = response.EducationEN;
 		$scope.projects = response.ProjectsEN;
 		$scope.aboutMe = response.AboutMeEN;
+	}).finally( function(){
+		$scope.dataLoading = false;
 	});
+	
 	$scope.toyName = toyNames[toyCounter];
 	$scope.langToggler = "toggle-right";
 	$scope.selectedHome = $location.hash() == "Home" || $location.hash() == "" ? "navbar-selected" : "";

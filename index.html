@@ -4,11 +4,13 @@
 	<link rel="stylesheet" type="text/css" href="css/waelCV.css">
 	<script src="js/jquery-3.1.0.min.js"></script>
 	<script src="js/angular.min.js"></script>
+	<script src="js/angular-animate.min.js"></script>
 	<script src="js/angular-route.min.js"></script>
 	<script src="js/angular-sanitize.min.js"></script>
 	<script src="js/angular-scroll.min.js"></script>
 	<script src="js/p5.min.js"></script>
 	<script src="js/CV.js">	</script>
+
 
 	<!-- <script src="js/snakeGame.js"></script>
 	<script src="js/sketch.js"></script> -->
@@ -46,14 +48,19 @@
 		<div class="color2"></div>
 	</div>
 <!--############################## HERE BE ABOUT ##############################-->
-	<div id="About" class="section">
+	<div id="About" class="section" style="overflow: hidden;">
 		<h1 class="section-title">About Me</h1>
-		<img src="images/profile.jpg" alt="Photo" class="profile">
-		<div ng-repeat="section in aboutMe" class="section-content">
-			<h2>{{section.title}}</h2>
-			<span class="horizontal-seperator"></span>
-			<div class="section-content-sub">
-				<p ng-bind-html="section.content"></p>
+		<div style="margin: 0;" ng-show="dataLoading" class="animate-show animate-hide">
+		    <p style="font-size: 120px; margin: 0;">Loading...</p>
+		</div>
+		<div ng-show="dataLoading == false" class="animate-show animate-hide">
+			<img src="images/profile.jpg" alt="Photo" class="profile">
+			<div ng-repeat="section in aboutMe" class="section-content">
+				<h2>{{section.title}}</h2>
+				<span class="horizontal-seperator"></span>
+				<div class="section-content-sub">
+					<p ng-bind-html="section.content"></p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -170,13 +177,17 @@
 	</div>
 	<div id="Education" class="section">
 		<h1 class="section-title">Education</h1>
-
-		<div ng-repeat="edu in education" class="section-content">
-			<h2>{{edu.time}}</h2>
-			<span class="horizontal-seperator"></span>
-			<div class="section-content-sub">
-				<h3>{{edu.title}}</h3>
-				<p class="slightly-smaller">{{edu.school}}</p>
+		<div style="margin: 0;" ng-show="dataLoading" class="animate-show animate-hide">
+		    <p style="font-size: 120px; margin: 0;">Loading...</p>
+		</div>
+		<div ng-show="dataLoading == false" class="animate-show animate-hide">
+			<div ng-repeat="edu in education" class="section-content">
+				<h2>{{edu.time}}</h2>
+				<span class="horizontal-seperator"></span>
+				<div class="section-content-sub">
+					<h3>{{edu.title}}</h3>
+					<p class="slightly-smaller">{{edu.school}}</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -188,14 +199,19 @@
 	</div>
 	<div id="Projects" class="section">
 		<h1 class="section-title">Projects</h1>
-		<div ng-repeat="project in projects" class="section-content">
-			<h2>{{project.title}}</h2>
-			<span class="horizontal-seperator"></span>
-			<div class="section-content-sub">
-				<p>{{project.description}}</p>
-				<ul>
-					<li ng-repeat="element in project.elements">{{element}}</li>
-				</ul>
+		<div style="margin: 0;" ng-show="dataLoading" class="animate-show animate-hide">
+		    <p style="font-size: 120px; margin: 0;">Loading...</p>
+		</div>
+		<div ng-show="dataLoading == false" class="animate-show animate-hide">
+			<div ng-repeat="project in projects" class="section-content">
+				<h2>{{project.title}}</h2>
+				<span class="horizontal-seperator"></span>
+				<div class="section-content-sub">
+					<p>{{project.description}}</p>
+					<ul>
+						<li ng-repeat="element in project.elements">{{element}}</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
