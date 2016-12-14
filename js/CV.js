@@ -1,4 +1,4 @@
-var app = angular.module('cvModule',['ngAnimate', 'ngRoute', 'duScroll']);
+var app = angular.module('cvModule',['ngAnimate', 'ngRoute', 'duScroll', 'ngSanitize']);
 var thingsAboutMe = [];
 var toyNames = ["Snake"];
 var toyCounter = 0;

@@ -1,19 +1,19 @@
 /* Fonts */
 
-@import url("fonts.css");
+@import url("fonts.min.css");
 
 /* Universal, navbar and masthead */
 
-@import url("UniversalCV.css");
+@import url("UniversalCV.min.css");
 
 /* Section */
 
-@import url("SectionCV.css");
+@import url("SectionCV.min.css");
 
 /* Footer */
 
-@import url("FooterCV.css");
+@import url("FooterCV.min.css");
 
 /* Mobile */
 
-@import url("MobileCV.css");
+@import url("MobileCV.min.css");
