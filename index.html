@@ -19,7 +19,7 @@
 </head>
 
 <body ng-app="cvModule" ng-controller="controller" scroll id="page">
-	<header>
+	<header ng-show="scrolledPastTop" class="navbar-show">
 		<!--<a ng-click="toggleLanguage()" class="{{langToggler}}">
 			<div class="toggle-inside">EN FR</div>
 		</a>-->
@@ -41,19 +41,21 @@
 	<div id="Home" class="header-filler style2">
 		<div class="mast">
 			<h1>Wael Ben Dhia</h1>
-			<h2 class="{{thingsOpacity}}">{{thingsAboutMe}}</h2>
+			<h2 ng-show="thingsAboutMeShow" class="opaque">{{thingsAboutMe}}</h2>
 		</div>
-		<div class="color4"></div>
-		<div class="color3"></div>
-		<div class="color2"></div>
+		<div class="filler" >
+			<div class="color4"></div>
+			<div class="color3"></div>
+			<div class="color2"></div>
+		</div>
 	</div>
 <!--############################## HERE BE ABOUT ##############################-->
 	<div id="About" class="section" style="overflow: hidden;">
 		<h1 class="section-title">About Me</h1>
-		<div style="margin: 0;" ng-show="dataLoading" class="animate-show animate-hide">
+		<div style="margin: 0;" ng-show="dataLoading" class="opaque">
 		    <p style="font-size: 120px; margin: 0;">Loading...</p>
 		</div>
-		<div ng-show="dataLoading == false" class="animate-show animate-hide">
+		<div ng-show="dataLoading == false" class="opaque">
 			<img src="images/profile.jpg" alt="Photo" class="profile">
 			<div ng-repeat="section in aboutMe" class="section-content">
 				<h2>{{section.title}}</h2>
@@ -177,10 +179,10 @@
 	</div>
 	<div id="Education" class="section">
 		<h1 class="section-title">Education</h1>
-		<div style="margin: 0;" ng-show="dataLoading" class="animate-show animate-hide">
+		<div style="margin: 0;" ng-show="dataLoading" class="opaque">
 		    <p style="font-size: 120px; margin: 0;">Loading...</p>
 		</div>
-		<div ng-show="dataLoading == false" class="animate-show animate-hide">
+		<div ng-show="dataLoading == false" class="opaque">
 			<div ng-repeat="edu in education" class="section-content">
 				<h2>{{edu.time}}</h2>
 				<span class="horizontal-seperator"></span>
@@ -199,10 +201,10 @@
 	</div>
 	<div id="Projects" class="section">
 		<h1 class="section-title">Projects</h1>
-		<div style="margin: 0;" ng-show="dataLoading" class="animate-show animate-hide">
+		<div style="margin: 0;" ng-show="dataLoading" class="opaque">
 		    <p style="font-size: 120px; margin: 0;">Loading...</p>
 		</div>
-		<div ng-show="dataLoading == false" class="animate-show animate-hide">
+		<div ng-show="dataLoading == false" class="opaque">
 			<div ng-repeat="project in projects" class="section-content">
 				<h2>{{project.title}}</h2>
 				<span class="horizontal-seperator"></span>

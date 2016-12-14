@@ -3,10 +3,12 @@ var thingsAboutMe = [];
 var toyNames = ["Snake"];
 var toyCounter = 0;
 var headerHeight = 50;
+var selectedIndex;
 
 app.controller('controller', function($scope, $anchorScroll, $location, $interval, $document, $http){
 	headerHeight = document.querySelector('header').getBoundingClientRect().height;
 	$scope.dataLoading = true;
+	$scope.scrolledPastTop = true;
 
 	$http.get('Data/stuff.json').success(function(response){
 		thingsAboutMe = response.ThingsAboutMeEN;
@@ -19,14 +21,29 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 	
 	$scope.toyName = toyNames[toyCounter];
 	$scope.langToggler = "toggle-right";
-	$scope.selectedHome = $location.hash() == "Home" || $location.hash() == "" ? "navbar-selected" : "";
-	$scope.selectedAbout = $location.hash() == "About"  ? "navbar-selected" : "";
-	$scope.selectedSkills = $location.hash() == "Skills" ? "navbar-selected" : "";
-	$scope.selectedEducation = $location.hash() == "Education" ? "navbar-selected" : "";
-	$scope.selectedProjects = $location.hash() == "Projects" ? "navbar-selected" : "";
+
+	switch($location.hash()){
+		case "About":
+			selectedIndex = 0;
+		break;
+		case "Skills":
+			selectedIndex = 1;
+		break;
+		case "Education":
+			selectedIndex = 2;
+		break;
+		case "Projects":
+			selectedIndex = 3;
+		break;
+		default:
+			selectedIndex = -1;
+			$scope.scrolledPastTop = false;
+		break;
+	}
+	
 	$scope.scrollPosition = 0;
 	$scope.thingsAboutMe = "Engineer";
-	$scope.thingsOpacity = "transparent";
+	$scope.thingsAboutMeShow = false;
 
 	$scope.changeGame = function(){
 		toyCounter = (toyCounter+1)%toyNames.length;
@@ -57,12 +74,12 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 				break;
 			case 1:
 				interval = 500;
-				$scope.thingsOpacity = "transparent";
+				$scope.thingsAboutMeShow = false;
 				state++;
 				break;
 			case 2:
 				interval = 500;
-				$scope.thingsOpacity = "opaque";
+				$scope.thingsAboutMeShow = true;
 				counter = (counter+1)%thingsAboutMe.length;
 				$scope.thingsAboutMe=thingsAboutMe[counter];
 				state = 0;
@@ -71,16 +88,22 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 	},interval);
 	
 	$scope.updateNavbar = function(ind){
-		$scope.selectedHome = ind == -1 ? "navbar-selected" : "";
-		$scope.selectedAbout = ind == 0 ? "navbar-selected" : "";
-		$scope.selectedSkills = ind == 1 ? "navbar-selected" : "";
-		$scope.selectedEducation = ind == 2 ? "navbar-selected" : "";
-		$scope.selectedProjects = ind == 3 ? "navbar-selected" : "";
+		if(typeof ind != "undefined" ){
+			selectedIndex = ind;
+		}
+		$scope.selectedHome = selectedIndex == -1 ? "navbar-selected" : "";
+		$scope.selectedAbout = selectedIndex == 0 ? "navbar-selected" : "";
+		$scope.selectedSkills = selectedIndex == 1 ? "navbar-selected" : "";
+		$scope.selectedEducation = selectedIndex == 2 ? "navbar-selected" : "";
+		$scope.selectedProjects = selectedIndex == 3 ? "navbar-selected" : "";
 	}
 
 	$scope.updateSelectedSection = function(ind){
 		var target;
-		switch(ind){
+		if(typeof ind != "undefined" ){
+			selectedIndex = ind;
+		}
+		switch(selectedIndex){
 			case -1:
 				target = "Home";
 				break;
@@ -104,25 +127,33 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 		$anchorScroll.yOffset = scrollOffset;
 	}
 
+	$scope.updateSelectedSection();
+
 })
 .directive("scroll", function ($window) {
     return function(scope, element, attrs) {
         angular.element($window).bind("scroll", function() {
         	scope.scrollPosition = $window.scrollY;
+        	var index;
         	if(document.querySelector('#Home').getBoundingClientRect().bottom > headerHeight)
-        		scope.updateNavbar(-1);
+        		index = -1;
         	else if(document.querySelector('#About').getBoundingClientRect().bottom >= headerHeight)
-        		scope.updateNavbar(0);
+        		index = 0;
         	else if(document.querySelector('#Skills').getBoundingClientRect().bottom >= headerHeight)
-        		scope.updateNavbar(1);
+        		index = 1;
         	else if(document.querySelector('#Education').getBoundingClientRect().bottom >= headerHeight)
-        		scope.updateNavbar(2);
+        		index = 2;
         	else if(document.querySelector('#Projects').getBoundingClientRect().bottom >= headerHeight)
-        		scope.updateNavbar(3);
+        		index = 3;
         	else
-        		scope.updateNavbar(4);
-        	//toggleGame(document.querySelector('#canvas').getBoundingClientRect().top > $window.innerHeight);
-            scope.$apply();
+        		index = 4;
+        	scope.scrolledPastTop = scope.scrollPosition >= headerHeight;
+        	if(index != selectedIndex){
+        		selectedIndex = index;
+        		console.log(index);
+        		scope.updateNavbar();
+        	}
+        	scope.$apply();
         });
     };
 })

@@ -6,7 +6,7 @@
 :root {
 	--white-color: #eee;
 	--white-color-semi-transparent: rgba(255, 255, 255, 0.95);
-	--white-color-transparent: rgba(255, 255, 255, 0.75);
+	--white-color-transparent: rgba(255, 255, 255, 0.8);
 	--black-color: #000;
 
 	--first-color: #2080ff;
@@ -16,6 +16,9 @@
 	--font-heading: "Raleway", sans-serif;
 	--font-subheading: "Raleway", sans-serif;
 	--font-body: "Montserrat", sans-serif;
+
+	--transition-time-slow: 0.7s;
+	--transition-time-fast: 0.35s;
 }
 
 body {
@@ -101,10 +104,22 @@ header{
 	padding:0;
 	width: 100%;
 	height: 50px;
-	z-index: 10;
+	z-index: 2;
 	color: var(--black-color);
 	background-color: var(--white-color-transparent);
 }
+
+.navbar-show.ng-hide{
+	transform: translateY(-100%);
+}
+
+.navbar-show{
+}
+
+.navbar-show.ng-hide-add, .navbar-show.ng-hide-remove {
+	transition: transform var(--transition-time-fast) ease;
+}
+
 
 .navbar{
 	width: 80%;
@@ -124,7 +139,7 @@ header{
 	height: 100%;
 	float: left;
 	overflow: hidden;
-	transition: height 0.5s ease;
+	transition: height var(--transition-time-fast) ease;
 }
 
 .navbar li a{
@@ -135,12 +150,12 @@ header{
 	display:block;
 	cursor: pointer;
 	text-align: center;
-	transition: 0.2s ease;
 	display: flex;
 	color: var(--black-color);
 	justify-content: center; /* align horizontal */
 	align-items: center;
 	text-decoration: none;
+	transition: all var(--transition-time-fast) ease;
 }
 
 .navbar svg{
@@ -152,7 +167,7 @@ header{
 	display: block;
 }
 
-li.contact-burger:hover{
+:not(.ng-animate)>.navbar>li.contact-burger:hover{
 	height: 200px;
 }
 
@@ -211,38 +226,10 @@ li.contact-burger:hover{
 	background-repeat: no-repeat;
 }
 
-.header-filler .color1,
-.header-filler .color2,
-.header-filler .color3,
-.header-filler .color4,
-footer .color1,
-footer .color2,
-footer .color3,
-footer .color4{
+.header-filler .filler{
 	position: absolute;
-	bottom: 0px;
-	height: 50px;
-	width: 5vw;
-}
-
-.header-filler .color1,
-footer .color1{
-	right: 15vw;
-}
-
-.header-filler .color2,
-footer .color2{
-	right: 10vw;
-}
-
-.header-filler .color3,
-footer .color3{
-	right: 5vw;
-}
-
-.header-filler .color4,
-footer .color4{
-	right: 0;
+	bottom: 0;
+	left: 0;
 }
 
 .mast{
@@ -250,6 +237,7 @@ footer .color4{
 	width: 100%;
 	top: 50%;
 	transform: translateY(-50%);
+	height: 200px;
 }
 
 .header-filler h1{
@@ -258,29 +246,18 @@ footer .color4{
 }
 
 .header-filler h2{
-	transition: 0.5s linear opacity;
 	font-size: 40px;
-}
-
-.transparent{
-	opacity: 0;
-	transition: 0.5s linear opacity;
 }
 
 .opaque{
 	opacity: 1;
-	transition: 0.5s linear opacity;
-}
-.animate-show {
-	opacity: 1;
-	height: initial;
 }
 
-.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
-	transition: opacity linear 0.5s;
+.opaque.ng-hide-add, .opaque.ng-hide-remove {
+	transition: opacity linear var(--transition-time-slow);
 }
 
-.animate-show.ng-hide {
+.opaque.ng-hide {
 	opacity: 0;
 	height: 0px;
 }
