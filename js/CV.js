@@ -152,7 +152,6 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
         	scope.scrolledPastTop = scope.scrollPosition >= headerHeight;
         	if(index != selectedIndex){
         		selectedIndex = index;
-        		console.log(index);
         		scope.updateNavbar();
         	}
         	scope.$apply();
