@@ -32,6 +32,8 @@
 
 .section li{
 	font-size: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 img.profile{
@@ -67,7 +69,8 @@ h1.section-title{
 	width: 80%;
 	margin-left: 10%;
 	margin-right: 10%;
-	margin-top: 20px;
+	margin-top: 40px;
+	margin-bottom: 40px
 }
 
 .section-content h2{
