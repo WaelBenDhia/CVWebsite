@@ -75,11 +75,13 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 			case 1:
 				interval = 500;
 				$scope.thingsAboutMeShow = false;
+				$scope.arrowActive = "active";
 				state++;
 				break;
 			case 2:
 				interval = 500;
 				$scope.thingsAboutMeShow = true;
+				$scope.arrowActive = "";
 				counter = (counter+1)%thingsAboutMe.length;
 				$scope.thingsAboutMe=thingsAboutMe[counter];
 				state = 0;

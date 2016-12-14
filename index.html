@@ -41,13 +41,19 @@
 	<div id="Home" class="header-filler style2">
 		<div class="mast">
 			<h1>Wael Ben Dhia</h1>
-			<h2 ng-show="thingsAboutMeShow" class="opaque">{{thingsAboutMe}}</h2>
+			<h2 ng-show="thingsAboutMeShow && dataLoading == false" class="opaque">{{thingsAboutMe}}</h2>
 		</div>
 		<div class="filler" >
 			<div class="color4"></div>
 			<div class="color3"></div>
 			<div class="color2"></div>
 		</div>
+		<a class="down-arrow {{arrowActive}}" ng-click="updateSelectedSection(0)">
+			<img src="images/arrow.svg" alt="Photo">
+			<img src="images/arrow.svg" alt="Photo">
+			<span class="gradient-top"></span>
+			<span class="gradient-bottom"></span>
+		</a>
 	</div>
 <!--############################## HERE BE ABOUT ##############################-->
 	<div id="About" class="section" style="overflow: hidden;">
