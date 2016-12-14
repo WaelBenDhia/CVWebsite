@@ -243,8 +243,8 @@ header{
 .down-arrow{
 	position: absolute;
 	left: 50%;
-	width: 48px;
-	height: 48px;
+	width: 32px;
+	height: 64px;
 	bottom: 50px;
 	transform: translateX(-50%);
 	overflow: hidden;
@@ -255,7 +255,7 @@ header{
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 18.75%;
+	height: 25%;
 	background: linear-gradient(to bottom, var(--first-color), rgba(0, 0, 0, 0));
 }
 
@@ -264,22 +264,27 @@ header{
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 18.75%;
+	height: 25%;
 	background: linear-gradient(to top, var(--first-color), rgba(0, 0, 0, 0));
 }
 
 .down-arrow>img{
 	width: 100%;
-	height: 62.5%;
-	margin-top: 18.75%;
-	margin-bottom: 18.75%;
-	transform: translateY(-160%);
+	height: 31.25%;
+	margin-top: 68.75%;
+	margin-bottom: 68.75%;
+	transform: translateY(-64px);
 	transition: transform 0s linear;
 }
 
-.down-arrow.active>img{
+.down-arrow.active>img:first-child{
 	transform: translateY(0px);
 	transition: transform var(--transition-time-fast) ease;
+}
+
+.down-arrow.active>img:nth-child(2){
+	transform: translateY(0px);
+	transition: transform calc(var(--transition-time-fast) * 3) ease;
 }
 
 .header-filler h1{
