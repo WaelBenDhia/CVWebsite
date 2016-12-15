@@ -73,7 +73,7 @@
 		height: initial;
 	}
 	.header-filler{
-		height: 500px;
+		height: 100%;
 	}
 	.header-filler h1{
 		font-size: 90px;
