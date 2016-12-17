@@ -308,3 +308,42 @@ header{
 	opacity: 0;
 	height: 0px;
 }
+
+.achievement{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	background-color: var(--white-color-transparent);
+}
+.achievement>p{
+	margin: 0;
+	width: 100%;
+	overflow: visible;
+	white-space: nowrap;
+}
+.achievement>p>span{
+	font-size: 12.7vw;
+	font-family: var(--font-heading);
+	font-weight: 900;
+}
+.achievement>p>span:first-child,
+.achievement>p>span:nth-child(5),
+.achievement>p>span:nth-child(9){
+	color: var(--first-color);
+}
+.achievement>p>span:nth-child(2),
+.achievement>p>span:nth-child(6),
+.achievement>p>span:nth-child(10){
+	color: var(--second-color);
+}
+.achievement>p>span:nth-child(3),
+.achievement>p>span:nth-child(7),
+.achievement>p>span:nth-child(11){
+	color: var(--third-color);
+}
+.achievement>p>span:nth-child(4),
+.achievement>p>span:nth-child(8),
+.achievement>p>span:nth-child(12){
+	color: var(--fourth-color);
+}

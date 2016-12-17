@@ -9,6 +9,34 @@ app.controller('controller', function($scope, $anchorScroll, $location, $interva
 	headerHeight = document.querySelector('header').getBoundingClientRect().height;
 	$scope.dataLoading = true;
 	$scope.scrolledPastTop = true;
+	
+	$scope.clicks = 0;
+	$scope.color1Clicks = 0;
+	$scope.color2Clicks = 0;
+	$scope.color3Clicks = 0;
+	$scope.color4Clicks = 0;
+
+	$scope.clickCount = function(color){
+		$scope.clicks++;
+		switch(color){
+			case 1:
+				$scope.color1Clicks++;
+			break;
+			case 2:
+				$scope.color2Clicks++;
+			break;
+			case 3:
+				$scope.color3Clicks++;
+			break;
+			case 4:
+				$scope.color4Clicks++;
+			break;
+		}
+	}
+
+	$scope.hideChievo = function(){
+		$scope.clicks = 0;
+	}
 
 	$http.get('Data/stuff.json').success(function(response){
 		thingsAboutMe = response.ThingsAboutMeEN;

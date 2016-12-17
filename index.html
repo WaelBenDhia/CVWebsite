@@ -44,9 +44,9 @@
 			<h2 ng-show="thingsAboutMeShow && dataLoading == false" class="opaque">{{thingsAboutMe}}</h2>
 		</div>
 		<div class="filler" >
-			<div class="color4"></div>
-			<div class="color3"></div>
-			<div class="color2"></div>
+			<div ng-click="clickCount(4)" class="color4"></div>
+			<div ng-click="clickCount(3)" class="color3"></div>
+			<div ng-click="clickCount(2)" class="color2"></div>
 		</div>
 		<a class="down-arrow {{arrowActive}}" ng-click="updateSelectedSection(0)">
 			<img src="images/arrow.svg" alt="Photo">
@@ -74,9 +74,9 @@
 	</div>
 <!--############################## HERE BE SKILLS ##############################-->
 	<div class="filler color2" >
-		<div class="color1"></div>
-		<div class="color4"></div>
-		<div class="color3"></div>
+		<div ng-click="clickCount(1)" class="color1"></div>
+		<div ng-click="clickCount(4)" class="color4"></div>
+		<div ng-click="clickCount(3)" class="color3"></div>
 	</div>
 	<div id="Skills" class="section">
 		<h1 class="section-title">Skills</h1>
@@ -179,9 +179,9 @@
 	</div>
 <!--############################## HERE BE EDUCATION ##############################-->
 	<div class="filler color3" >
-		<div class="color2"></div>
-		<div class="color1"></div>
-		<div class="color4"></div>
+		<div ng-click="clickCount(2)" class="color2"></div>
+		<div ng-click="clickCount(1)" class="color1"></div>
+		<div ng-click="clickCount(4)" class="color4"></div>
 	</div>
 	<div id="Education" class="section">
 		<h1 class="section-title">Education</h1>
@@ -201,9 +201,9 @@
 	</div>
 <!--############################## HERE BE PROJECTS ##############################-->
 	<div class="filler color4" >
-		<div class="color3"></div>
-		<div class="color2"></div>
-		<div class="color1"></div>
+		<div ng-click="clickCount(3)" class="color3"></div>
+		<div ng-click="clickCount(2)" class="color2"></div>
+		<div ng-click="clickCount(1)" class="color1"></div>
 	</div>
 	<div id="Projects" class="section">
 		<h1 class="section-title">Projects</h1>
@@ -236,5 +236,20 @@
 		</div>
 		<h2>Thanks for visiting!</h2>
 	</footer>
+
+	<div ng-show="clicks > 9" class="achievement opaque" ng-click="hideChievo()">
+		<p><span ng-show="color1Clicks > 2">CLICK'EM GOOD<br></span>
+		<span ng-show="color2Clicks > 2">CLICK'EM GOOD<br></span>
+		<span ng-show="color3Clicks > 2">CLICK'EM GOOD<br></span>
+		<span ng-show="color4Clicks > 2">CLICK'EM GOOD<br></span>
+		<span ng-show="color1Clicks > 4">CLICK'EM GOOD<br></span>
+		<span ng-show="color2Clicks > 4">CLICK'EM GOOD<br></span>
+		<span ng-show="color3Clicks > 4">CLICK'EM GOOD<br></span>
+		<span ng-show="color4Clicks > 4">CLICK'EM GOOD<br></span>
+		<span ng-show="color1Clicks > 6">CLICK'EM GOOD<br></span>
+		<span ng-show="color2Clicks > 6">CLICK'EM GOOD<br></span>
+		<span ng-show="color3Clicks > 6">CLICK'EM GOOD<br></span>
+		<span ng-show="color4Clicks > 6">CLICK'EM GOOD<br></span></p>
+	</div>
 </body>
 </html>
